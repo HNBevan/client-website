@@ -296,14 +296,20 @@ margin-left: -60px;
 a { text-decoration: none;}
 
 
-
+.main-logo {
+    width: 200px; 
+    height: auto;
+    cursor: pointer;
+   margin-left: -79px;
+    
+}
 
 
 .header-logo {
     width: 200px; 
     height: auto;
     cursor: pointer;
-   margin-left: -68px;
+   margin-left: -60px;
     
     
     
