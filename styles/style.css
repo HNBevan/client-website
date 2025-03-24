@@ -130,20 +130,41 @@ header h1 {
 
 
 
-.back-to-gallery-button {
-    position: absolute;
-    top: 47px; /* Centers vertically */
-    right: 100px; /* Moves to the far right */
-    transform: translateY(-50%); /* Ensures perfect centering */
-    padding: 5px 10px;
-    font-size: 16px;
-    background-color:#ff6600;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    white-space:nowrap;
+.gallery-button-section {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  text-align: center;
 }
+
+.back-to-gallery-button {
+  display: block;
+  width: 100%;
+ 
+  padding:3px;
+  font-size: 16px;
+  background-color: #ff6600;
+  color: white;
+  border: none;
+ 
+  font-weight: bold;
+  cursor: pointer;
+  
+
+  margin-top: 3px;
+
+  
+ 
+}
+
+/* Hover effect */
+.back-to-gallery-button:hover {
+  color: #2d0202;
+}
+
+
+
+
 
 
 
@@ -151,10 +172,11 @@ header h1 {
 .gallery-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* 3 columns per row */
-    gap: 30px;
+    gap: 15px;
     padding: 20px;
     max-width: 1200px;
     margin: auto;
+   
 }
 
 
@@ -185,7 +207,7 @@ header h1 {
     top: 50%; /* Move overlay to the middle */
     left: 50%; /* Move overlay to the center */
     transform: translate(-50%, -50%); /* Perfectly center the box */
-    background: rgba(243, 144, 45, 0.664);
+    background: #ff66009b;
     color: white;
     padding: 3px; 
     border-radius: 5px; 
@@ -197,7 +219,7 @@ header h1 {
 
 
 .gallery-box:hover .overlay {
-    background-color: #311203;
+    background-color: #401903ba;
    
 }
 
@@ -207,6 +229,7 @@ header h1 {
     gap: 15px;
     justify-content: left;
     padding: 7px;
+    margin-top: 1px;
   }
   
   .thumbnail img {
@@ -598,16 +621,20 @@ margin-top: 90px;
 
 .slider-overlay-heading {
   position: absolute;
-  top: 0;
+  top: 5%;
   left: 0;
   width: 100%;
-  background: rgba(0, 0, 0, 0.253);
+  background-color: #ff66009b;
+ 
   color: #fff;
   padding: 3px 10px;
   font-size: 16px;
   font-weight: bold;
   text-align: center;
+  border-radius: 5px;
   z-index: 5;
+
+  
 }
 
 
