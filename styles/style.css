@@ -506,6 +506,44 @@ padding: 0;
 }
 
 .slider-container {
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  
+  .slider {
+    display: flex;
+    transition: transform 0.3s ease;
+  }
+  
+  .slider img {
+    width: 100%;
+    flex-shrink: 0;
+  }
+  
+  .slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+  }
+  
+  .slider-btn.prev {
+    left: 10px;
+  }
+  
+  .slider-btn.next {
+    right: 10px;
+  }
+  
+
+.slider-container {
 position: relative;
 width: 600px;
 height: 400px;
@@ -606,13 +644,13 @@ margin: 0 auto; /* Centers the container */
 
 @media (max-width: 600px) {
 .bullet-box {
-    width: 100%; /* One per row on mobile */
+    width:100%;
 }
 }
 
 
 .bullet-box {
-width: 30%; /* Ensures three boxes per row */
+width: 30%;
 min-width: 250px; /* Prevents them from shrinking too much */
 height: 250px; /* Keeps all boxes uniform */
 display: flex;
