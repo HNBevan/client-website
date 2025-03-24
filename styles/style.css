@@ -583,6 +583,25 @@ margin-top: 90px;
 
 }
 
+.slider-overlay-heading {
+  position: absolute;
+  top: 20px; /* distance from the top */
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.445);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  z-index: 5;
+  max-width: 90%;
+  white-space: nowrap;
+}
+
+
+
 .bullet-container {
 display: flex;
 flex-wrap: wrap; /* Allows items to wrap to the next row */
