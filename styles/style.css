@@ -226,7 +226,7 @@ header h1 {
 .gallery {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 3px;
     justify-content: left;
     padding: 7px;
     margin-top: 1px;
@@ -624,8 +624,7 @@ margin-top: 90px;
   top: 5%;
   left: 0;
   width: 100%;
-  background-color: #ff66009b;
- 
+  background-color: #1b181770;
   color: #fff;
   padding: 3px 10px;
   font-size: 16px;
