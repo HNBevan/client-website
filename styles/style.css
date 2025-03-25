@@ -663,8 +663,8 @@ margin: 0 auto; /* Centers the container */
 
 .bullet-box {
 width: 30%;
-min-width: 250px; /* Prevents them from shrinking too much */
-height: 250px; /* Keeps all boxes uniform */
+min-width: 255px; /* Prevents them from shrinking too much */
+height: 260px; /* Keeps all boxes uniform */
 display: flex;
 flex-direction: column;
 align-items: center;
