@@ -233,7 +233,7 @@ header h1 {
   }
   
   .thumbnail img {
-    width: 240px;
+    width: 230px;
     height: auto;
     cursor: pointer;
     border-radius: 5px;
