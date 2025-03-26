@@ -233,7 +233,7 @@ header h1 {
   }
   
   .thumbnail img {
-    width: 200px;
+    width: 150px;
     height: auto;
     cursor: pointer;
     border-radius: 5px;
@@ -695,38 +695,27 @@ color: #333
 margin-bottom: 30px;
 }
 
-.button-bottom {
-background-color: #ff6600;
-color: white;
-padding: 10px 15px;
-text-decoration: none;
-border-radius: 5px;
-display: flex;
-align-items: center;
-justify-content: center;
-margin-top: 100px;
-margin-bottom: -120px;
-}
+
 
 .button-bottom:hover {
   color: #2d0202;
 }
 
-
-
-.contact-info{
-display: grid;
-grid-template-rows:repeat(2, 1fr);
-justify-content: center;
-align-items: center; 
-margin-top: -20px;
+.button-bottom {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #ff6600;
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
 }
 
-.contact-us-container {
-margin-top: 90px;
-margin-bottom: 10px;
-padding-bottom: 20px;
-}
+
 
 .bottom-header {
 width: fit-content;
@@ -735,6 +724,38 @@ margin: auto;
 padding-top: 30px;
 font-style: italic;
 }
+
+.site-footer {
+  background-color:#2d0202;
+  color: #fff;
+  padding: 10px 5px;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 40px;
+}
+
+.site-footer p {
+  margin: 5px 0; /* 👈 This reduces spacing between lines */
+}
+
+.site-footer a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+
+@media (max-width: 600px) {
+  .site-footer {
+    font-size: 13px;
+    padding: 15px 5px;
+  }
+}
+
 
 
 
