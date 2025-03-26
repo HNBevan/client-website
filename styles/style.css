@@ -233,7 +233,7 @@ header h1 {
   }
   
   .thumbnail img {
-    width: 150px;
+    width: 180px;
     height: auto;
     cursor: pointer;
     border-radius: 5px;
@@ -726,12 +726,14 @@ font-style: italic;
 }
 
 .site-footer {
+  width:100vw;
   background-color:#2d0202;
   color: #fff;
   padding: 10px 5px;
   text-align: center;
   font-size: 14px;
   margin-top: 40px;
+  margin-left: -50px;
 }
 
 .site-footer p {
