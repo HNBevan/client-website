@@ -8,27 +8,31 @@
 </head>
 <body>
 
-        <header class="header-gallery">
-            <a href="index.html">
-                <img src="images/aptlogo.png" alt="Logo" class="header-logo">
-            </a>
+   
+    <header>
+        <div class="header">
+        <a href="index.html">
+        <img class="header-logo" src="images/aptlogo.png">
+        </a>   
+
+        <h1 class="head-title">A.P.T Builders</h1>
+        <nav class="burger-nav">
+            <button class="burger-toggle" onclick="toggleMenu()">☰</button>
+            <div class="burger-menu" id="burgerMenu">
+              <a href="index.html">Home</a>
+              <a href="gallery.html">Gallery</a>
+              <a href="services.html">Services</a>
+              <a href="contact.html">Contact Us</a>
+            </div>
+          </nav>
+          
+        </div>
+      </header>
+
+  
+
     
-            <h1 class="gallery-title">A.P.T.Builders</h1>
-    
-        
-        
-         <div class="menu">
-             <button class="menu-toggle">
-                 ☰
-             </button>
-             <div class="menu-content">
-                 <a href="index.html">Home</a>
-                 <a href="gallery.html">Gallery</a>
-                 <a href="services.html">Services</a>
-                 <a href="contact.html">Contact Us</a>
-             </div>
-         </div>
-     </header>
+
 
  <div class="logo-container">
      <img src="images/APT LOGO.png" alt="Company Logo" class="logo">
@@ -59,11 +63,22 @@
         </a>
     </div>
 
-    <div class="contact-us-container">
-        <span class="contact-info">&#9742; Alan - 07794083532</span>
-        <span class="contact-info">&#9993; a.p.t.builders@hotmail.co.uk</span>
-    </div>
-
+        <footer class="site-footer">
+            <div class="footer-content">
+              <p><a href="tel:07794083532">&#9742; Alan - 07794 083532</a></p>
+              <p><a href="mailto:a.p.t.builders@hotmail.co.uk">&#9993; a.p.t.builders@hotmail.co.uk</a></p>
+              <p>&copy; 2025 A.P.T Builders. All rights reserved.</p>
+            </div>
+          </footer>
+        
+        
+          <script>
+            function toggleMenu() {
+              const menu = document.getElementById("burgerMenu");
+              menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+            }
+          </script>
+          
 
 </body>
 </html>
