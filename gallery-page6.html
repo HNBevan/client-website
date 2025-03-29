@@ -7,33 +7,31 @@
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
+  <header>
+    <div class="header">
+    <a href="index.html">
+    <img class="header-logo" src="images/aptlogo.png">
+    </a>   
 
-  <div class="header">
+    <p class="head-title">Landscaping</p>
+    <nav class="burger-nav">
+        <button class="burger-toggle" onclick="toggleMenu()">☰</button>
+        <div class="burger-menu" id="burgerMenu">
+          <a href="index.html">Home</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="services.html">Services</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+      </nav>
+      
+    </div>
+  </header>
+ 
         
-    
-    <header>
-      <div class="header">
-      <a href="index.html">
-      <img class="header-logo" src="images/aptlogo.png">
-      </a>   
-  
-      <p class="head-title">A.P.T Builders</p>
-      <nav class="burger-nav">
-          <button class="burger-toggle" onclick="toggleMenu()">☰</button>
-          <div class="burger-menu" id="burgerMenu">
-            <a href="index.html">Home</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="services.html">Services</a>
-            <a href="contact.html">Contact Us</a>
-          </div>
-        </nav>
-        
-      </div>
-    </header>
-
-
+      
+   
     <section class="gallery-button-section">
-      <a href="gallery.html">
+      <a class="gallery-ref-link" href="gallery.html">
         <button class="back-to-gallery-button">Back to Gallery</button>
       </a>
     </section>
@@ -44,10 +42,10 @@
         <!-- Image 1 -->
         <input type="checkbox" id="img1" class="lightbox-toggle">
         <label for="img1" class="thumbnail">
-          <img src="images/roof.samplepic - Copy.jpg" alt="Gallery Image 1">
+          <img src="images/driveway6.jpeg" alt="Gallery Image 1">
         </label>
         <label for="img1" class="lightbox">
-          <img src="images/roof.samplepic - Copy.jpg" alt="Enlarged Image">
+          <img src="images/driveway6.jpeg" alt="Enlarged Image">
         </label>
       
         <!-- Image 2 -->
@@ -70,6 +68,14 @@
 
 
       </div>
+
+      <footer class="site-footer">
+        <div class="footer-content">
+          <p><a href="tel:07794083532">&#9742; Alan - 07794 083532</a></p>
+          <p><a href="mailto:a.p.t.builders@hotmail.co.uk">&#9993; a.p.t.builders@hotmail.co.uk</a></p>
+          <p>&copy; 2025 A.P.T Builders. All rights reserved.</p>
+        </div>
+      </footer>
 
       <script>
         function toggleMenu() {

@@ -138,6 +138,12 @@ header h1 {
   margin: 0;
   text-align: center;
   
+  
+}
+
+.gallery-ref-link {
+  text-decoration: none;
+
 }
 
 .back-to-gallery-button {
@@ -152,6 +158,7 @@ header h1 {
   font-weight: bold;
   cursor: pointer;
   margin-top: 3px;
+ 
 
   
  
@@ -160,6 +167,8 @@ header h1 {
 /* Hover effect */
 .back-to-gallery-button:hover {
   color: #2d0202;
+  text-decoration: none;
+ 
 }
 
 
@@ -233,20 +242,24 @@ header h1 {
   }
   
   .thumbnail img {
-    width: 190px;
+    width: 180px;
     height: auto;
     cursor: pointer;
     border-radius: 5px;
     transition: transform 0.3s ease;
+    padding:2px;
     
   }
+
+
+
   
   .thumbnail img:hover {
     transform: scale(1.05);
   }
   
   /* Hide the checkboxes */
-  .lightbox-toggle {
+  .lightbox-toggle-main {
     display: none;
   }
   
@@ -273,6 +286,11 @@ header h1 {
         height: auto;
         border-radius: 15px;
       }
+
+      input[type="checkbox"].lightbox-toggle {
+        display: none;
+      }
+      
   
   
   /* Show the lightbox when checkbox is checked */
@@ -350,6 +368,7 @@ header h1 {
 
 @media (max-width: 100px) {
   .header-logo {
+    width: 100px;
     
   }
 }
@@ -534,6 +553,8 @@ margin: 0;
 padding: 0;
 }
 
+
+
 /* Slider Container */
 .slider-container {
     position: relative;
@@ -544,6 +565,93 @@ padding: 0;
     overflow: hidden;
   }
   
+  .lightbox-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  .lightbox-img {
+    width: 600px;
+    height: 400px;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  /* Lightbox Styles */
+  .lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .lightbox-content {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 6px;
+  }
+  
+  .lightbox-close {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 50px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 20px;
+  z-index: 10000;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+  color: #ff6600;
+}
+
+.lightbox-prev {
+  left: 10px;
+}
+
+.lightbox-next {
+  right: 10px;
+}
+
+
+    
+ 
+
+
+
+
+
+
+
+
+
+ 
+
   /* Slider Track */
   .slider {
     display: flex;
@@ -724,15 +832,19 @@ font-style: italic;
   max-width: 100%;
   background-color:#2d0202;
   color: #fff;
-  padding: 5px;
+  padding: 2px;
   text-align: center;
-  font-size: 14px;
+  font-size: 12px;
   margin-top: 40px;
+  
+ 
+
   
 }
 
 .site-footer p {
-  margin: 5px 0; /* 👈 This reduces spacing between lines */
+  margin: 2px;
+  
 }
 
 .site-footer a {
