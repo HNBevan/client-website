@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Roofing Services in Kent | A.P.T Builders</title>
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+
+    
+
+    <header>
+        <div class="header">
+        <a href="index.html">
+        <img class="header-logo" src="images/aptlogo.png">
+        </a>   
+    
+        <p class="head-title">A.P.T Builders</p>
+        <nav class="burger-nav">
+            <button class="burger-toggle" onclick="toggleMenu()">☰</button>
+            <div class="burger-menu" id="burgerMenu">
+              <a href="index.html">Home</a>
+              <a href="gallery.html">Gallery</a>
+              <a href="services.html">Services</a>
+              <a href="contact.html">Contact Us</a>
+            </div>
+          </nav>
+          
+        </div>
+      </header>
+
+      <section class="gallery-button-section">
+        <a class="gallery-ref-link" href="services.html">
+          <button class="back-to-gallery-button">Back to Services</button>
+        </a>
+      </section>
+
+      <section class="service-banner">
+        <div class="banner-content">
+          <h2>Roofing Services in Kent</h2>
+          <p>Expert roofing solutions tailored to your needs.</p>
+        </div>
+      </section>
+      
+    
+      
+
+  <main class="service-page">
+    <section class="service-hero">
+      <h2>Roofing Services in Kent</h2>
+      <p>Reliable repairs and new roofing installations across Maidstone, Canterbury, Ashford, and surrounding areas.</p>
+    </section>
+
+    <section class="service-content">
+      <h3>Expert Roofing for Homes and Businesses</h3>
+      <p>
+        At A.P.T Builders, we provide professional roofing services throughout Kent. Whether it’s a small leak, damaged tiles, or a complete new roof installation, we are experienced and fully equipped to handle it.
+      </p>
+
+      <h3 class="included-services">Our Roofing Services Include:</h3>
+      <ul>
+        <li>New roof installations (pitched and flat)</li>
+        <li>Tile and slate replacements</li>
+        <li>Leak detection and repairs</li>
+        <li>Chimney repointing and lead flashing</li>
+        <li>Fascia, soffit and guttering replacement</li>
+      </ul>
+
+      
+
+      <h3 class="service-locations">Serving All of Kent</h3>
+      <p>
+        We proudly serve Maidstone, Canterbury, Ashford, Sevenoaks, Tunbridge Wells and the wider Kent area — providing dependable roofing services tailored to your property.
+      </p>
+
+      <h3>Why Choose A.P.T Builders?</h3>
+      <ul>
+        <li>18+ years of experience</li>
+        <li>Fully insured</li>
+        <li>Free quotes and honest advice</li>
+        <li>Competitive pricing with no hidden costs</li>
+      </ul>
+    </section>
+
+    <div class="button-container">
+      <a href="contact.html" class="button">Contact Us for Roofing Help</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="contact-us-container">
+      <span class="contact-info">
+        <a href="tel:07794083532">📞 Alan - 07794083532</a>
+      </span>
+      <span class="contact-info">
+        <a href="mailto:a.p.t.builders@hotmail.co.uk">✉️ a.p.t.builders@hotmail.co.uk</a>
+      </span>
+    </div>
+  </footer>
+
+  <script>
+    const images = Array.from(document.querySelectorAll(".lightbox-img"));
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const closeBtn = document.querySelector(".lightbox-close");
+    const nextBtn = document.querySelector(".lightbox-next");
+    const prevBtn = document.querySelector(".lightbox-prev");
+  
+    let currentIndex = 0;
+  
+    function showImage(index) {
+      const img = images[index];
+      if (img) {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        currentIndex = index;
+        lightbox.style.display = "flex";
+      }
+    }
+  
+    images.forEach((img, index) => {
+      img.addEventListener("click", () => showImage(index));
+    });
+  
+    nextBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage(currentIndex);
+    });
+  
+    prevBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      showImage(currentIndex);
+    });
+  
+    closeBtn.addEventListener("click", () => {
+      lightbox.style.display = "none";
+    });
+  
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) {
+        lightbox.style.display = "none";
+      }
+    });
+  
+    // Swipe Support
+    let touchStartX = 0;
+    lightbox.addEventListener("touchstart", (e) => {
+      touchStartX = e.touches[0].clientX;
+    });
+  
+    lightbox.addEventListener("touchend", (e) => {
+      const touchEndX = e.changedTouches[0].clientX;
+      const diffX = touchStartX - touchEndX;
+  
+      if (diffX > 50) {
+        // Swipe left
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex);
+      } else if (diffX < -50) {
+        // Swipe right
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showImage(currentIndex);
+      }
+    });
+  </script>
+
+</body>
+</html>
