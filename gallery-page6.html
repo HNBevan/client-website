@@ -36,39 +36,23 @@
       </a>
     </section>
     
-
+    <div class="gallery lightbox-gallery">
+      <img src="images/roof.samplepic - Copy.jpg" alt="Driveway Image 1" class="lightbox-img">
+      <img src="images/roof.samplepic - Copy.jpg" alt="Driveway Image 1" class="lightbox-img">
+      <img src="images/roof.samplepic - Copy.jpg" alt="Driveway Image 1" class="lightbox-img">
+      <img src="images/roof.samplepic - Copy.jpg" alt="Driveway Image 1" class="lightbox-img">
+      
+    </div>
     
-    <div class="gallery">
-        <!-- Image 1 -->
-        <input type="checkbox" id="img1" class="lightbox-toggle">
-        <label for="img1" class="thumbnail">
-          <img src="images/driveway6.jpeg" alt="Gallery Image 1">
-        </label>
-        <label for="img1" class="lightbox">
-          <img src="images/driveway6.jpeg" alt="Enlarged Image">
-        </label>
-      
-        <!-- Image 2 -->
-        <input type="checkbox" id="img2" class="lightbox-toggle">
-        <label for="img2" class="thumbnail">
-          <img src="images/image2.jpg" alt="Gallery Image 2">
-        </label>
-        <label for="img2" class="lightbox">
-          <img src="images/image2.jpg" alt="Enlarged Image">
-        </label>
-
-         <!-- Image 3 -->
-         <input type="checkbox" id="img3" class="lightbox-toggle">
-         <label for="img3" class="thumbnail">
-           <img src="images/roof.samplepic - Copy.jpg" alt="Gallery Image 2">
-         </label>
-         <label for="img3" class="lightbox">
-           <img src="images/roof.samplepic - Copy.jpg" alt="Enlarged Image">
-         </label>
-
-
-      </div>
-      
+    <!-- Lightbox Overlay -->
+    <div id="lightbox" class="lightbox">
+      <span class="lightbox-close">&times;</span>
+      <button class="lightbox-prev">&#10094;</button>
+      <img class="lightbox-content" id="lightbox-img" src="" alt="Enlarged image">
+      <button class="lightbox-next">&#10095;</button>
+    </div>
+    
+    
       <footer class="site-footer">
         <div class="contact-us-container">
           <span class="contact-info">
@@ -86,6 +70,72 @@
           menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
         }
       </script>
+
+<script>
+  const images = Array.from(document.querySelectorAll(".lightbox-img"));
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  const closeBtn = document.querySelector(".lightbox-close");
+  const nextBtn = document.querySelector(".lightbox-next");
+  const prevBtn = document.querySelector(".lightbox-prev");
+
+  let currentIndex = 0;
+
+  function showImage(index) {
+    const img = images[index];
+    if (img) {
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      currentIndex = index;
+      lightbox.style.display = "flex";
+    }
+  }
+
+  images.forEach((img, index) => {
+    img.addEventListener("click", () => showImage(index));
+  });
+
+  nextBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage(currentIndex);
+  });
+
+  prevBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage(currentIndex);
+  });
+
+  closeBtn.addEventListener("click", () => {
+    lightbox.style.display = "none";
+  });
+
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) {
+      lightbox.style.display = "none";
+    }
+  });
+
+  // Swipe Support
+  let touchStartX = 0;
+  lightbox.addEventListener("touchstart", (e) => {
+    touchStartX = e.touches[0].clientX;
+  });
+
+  lightbox.addEventListener("touchend", (e) => {
+    const touchEndX = e.changedTouches[0].clientX;
+    const diffX = touchStartX - touchEndX;
+
+    if (diffX > 50) {
+      // Swipe left
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage(currentIndex);
+    } else if (diffX < -50) {
+      // Swipe right
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      showImage(currentIndex);
+    }
+  });
+</script>
       
 
 </body>
