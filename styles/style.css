@@ -464,7 +464,7 @@ header h1 {
 
 
 .gallery-box img {
-    width: 100%;
+    width: 100vw;
     height: 200px; 
     object-fit:cover;
     display: block;
