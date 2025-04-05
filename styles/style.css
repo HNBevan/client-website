@@ -472,6 +472,38 @@ header h1 {
  
 }
 
+@media (max-width:600px){
+  .gallery-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* 3 columns per row */
+    gap: 12px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+   
+}
+
+
+.gallery-box {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    display: block;
+}
+
+
+
+.gallery-box img {
+    width: 100vw;
+    height: 160px; 
+    object-fit:cover;
+    display: block;
+    transition: transform 0.3s ease;
+ 
+}
+  
+}
+
 
 .gallery-box:hover img {
     transform: scale(1.05);
@@ -661,6 +693,20 @@ header h1 {
  
 }
 
+.head-title-main {
+  display: flex;
+  white-space: nowrap;
+  color: #ffffff;
+  text-align: center;
+  font-size: 50px;
+  margin-top: 50px;
+  font-weight: bold;
+  margin-left:-60px;
+  white-space: nowrap;
+}
+
+
+
 
 
 @media (max-width: 100px) {
@@ -668,9 +714,27 @@ header h1 {
     width: 100px;
     
   }
-
-    
+  
+  
 }
+
+@media (max-width: 600px) {
+  .head-title {
+    font-size: 23px;
+  }
+}
+
+@media (max-width:600px) {
+  .head-title-main {
+    font-size: 38px;
+  }
+}
+ 
+
+
+
+
+
 
 
 
@@ -785,21 +849,6 @@ margin-top: -40px;
 
 .button:hover {
     color:#2d0202;
-}
-
-@media (max-width: 600px) {
-  .head-title {
-    font-size: 1rem;
-    text-align: center;
-    width: 100%;
-  }
-
- .head-title {
-  font-size: 20px;
- }
-
- 
-
 }
 
 
