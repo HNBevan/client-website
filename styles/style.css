@@ -450,6 +450,7 @@ header h1 {
     padding: 20px;
     max-width: 1200px;
     margin: auto;
+    
    
 }
 
@@ -464,11 +465,12 @@ header h1 {
 
 
 .gallery-box img {
-    width: 100vw;
-    height: 200px; 
+    width: 500px;
+    height: 220px; 
     object-fit:cover;
     display: block;
     transition: transform 0.3s ease;
+    
  
 }
 
@@ -806,7 +808,7 @@ justify-content: center;
 background: rgba(0, 0, 0, 0.5); /* Optional: Semi-transparent background */
 padding:10px;
 border-radius: 10px;
-max-height: 243px;
+max-height: 250px;
 max-width: 400px;
 }
 
@@ -1094,9 +1096,11 @@ margin-top: 90px;
 display: flex;
 flex-wrap: wrap; /* Allows items to wrap to the next row */
 justify-content: center; /* Centers the items */
-gap: 30px; /* Adds space between boxes */
+gap: 10px; /* Adds space between boxes */
 max-width: 900px; /* Prevents boxes from spreading too wide */
 margin: 0 auto; /* Centers the container */
+grid-template-columns: repeat(1, 1fr); /* 3 columns per row */
+
 }
 
 @media (max-width: 900px) {
@@ -1125,6 +1129,7 @@ border: 1px solid #ddd;
 border-radius: 10px;
 background: rgba(0, 0, 0, 0.05);
 padding: 15px;
+
 }
 
 
@@ -1139,6 +1144,14 @@ margin-bottom: 10px;
     margin: 0;
 font-size: 14px;
 color: #333
+
+}
+
+
+.bullet-link {
+  text-decoration: none;
+  color: inherit;
+ 
 
 }
 

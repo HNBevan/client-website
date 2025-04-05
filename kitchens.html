@@ -91,13 +91,15 @@
     </div>
   </footer>
 
-  <!-- Burger Menu Script -->
   <script>
     function toggleMenu() {
       const menu = document.getElementById("burgerMenu");
-      menu.classList.toggle("show");
+      menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
     }
   </script>
+  
+
+ 
 
 </body>
 </html>

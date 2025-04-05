@@ -9,25 +9,26 @@
 <body>
   <div class="page-wrapper">
    
-  <header>
-    <div class="header">
-    <a href="index.html">
-    <img class="header-logo" src="images/aptlogo.png">
-    </a>   
-
-    <p class="head-title">A.P.T Builders</p>
-    <nav class="burger-nav">
-        <button class="burger-toggle" onclick="toggleMenu()">☰</button>
-        <div class="burger-menu" id="burgerMenu">
-          <a href="index.html">Home</a>
-          <a href="gallery.html">Gallery</a>
-          <a href="services.html">Services</a>
-          <a href="contact.html">Contact Us</a>
-        </div>
-      </nav>
-      
-    </div>
-  </header>
+    <header>
+      <div class="header">
+      <a href="index.html">
+      <img class="header-logo" src="images/aptlogo.png">
+      </a>   
+  
+      <p class="head-title-main">A.P.T Builders</p>
+      <nav class="burger-nav">
+          <button class="burger-toggle" onclick="toggleMenu()">☰</button>
+          <div class="burger-menu" id="burgerMenu">
+            <a href="index.html">Home</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact Us</a>
+          </div>
+        </nav>
+        
+      </div>
+    </header>
+  
 
   
 
@@ -55,11 +56,11 @@
             <label for="message">Message:</label>
             <textarea id="message" name="message" rows="4" required></textarea>
 
-            <button type="submit">Send Message</button>
+            <button class="button" type="submit">Send Message</button>
         </form>
 
         <a href="index.html">
-            <button>Back to Home</button>
+            <button class="button">Back to Home</button>
         </a>
     </div>
 
@@ -77,13 +78,13 @@
     </div>
         
         
-          <script>
-            function toggleMenu() {
-              const menu = document.getElementById("burgerMenu");
-              menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
-            }
-          </script>
-          
+    <script>
+      function toggleMenu() {
+        const menu = document.getElementById("burgerMenu");
+        menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+      }
+    </script>
+    
 
 </body>
 </html>
