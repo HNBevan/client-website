@@ -1,57 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-       
-    <link rel="stylesheet" href="styles/style.css">
-    
-    
-    <title>A.P.T.Builders</title>
-
-    <link rel="preload" as="image" href="images/Banner%20two.jpg" importance="high">
-
-       
-    
-
-  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A.P.T.Builders</title>
+  <link rel="stylesheet" href="styles/style.css" />
+  <link rel="preload" as="image" href="images/Banner%20two.jpg" importance="high" />
 </head>
 
 <body>
+  <div class="page-wrapper">
+    <header>
+      <div class="header">
+        <a href="index.html"><img class="header-logo" src="images/aptlogo.png" alt="APT Logo" /></a>
+        <p class="head-title-main">A.P.T Builders</p>
+        <nav class="burger-nav">
+          <button class="burger-toggle" onclick="toggleMenu()">☰</button>
+          <div class="burger-menu" id="burgerMenu">
+            <a href="index.html">Home</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact Us</a>
+          </div>
+        </nav>
+      </div>
+    </header>
 
-    <div class="page-wrapper">
-    
-<header>
-    <div class="header">
-    <a href="index.html">
-    <img class="header-logo" src="images/aptlogo.png">
-    </a>   
-
-    <p class="head-title-main">A.P.T Builders</p>
-    <nav class="burger-nav">
-        <button class="burger-toggle" onclick="toggleMenu()">☰</button>
-        <div class="burger-menu" id="burgerMenu">
-          <a href="index.html">Home</a>
-          <a href="gallery.html">Gallery</a>
-          <a href="services.html">Services</a>
-          <a href="contact.html">Contact Us</a>
-        </div>
-      </nav>
-      
+    <div class="banner">
+      <div class="banner-overlay">
+        <img src="images/aptlogo.png" alt="Logo" class="banner-logo" />
+        <a href="contact.html" class="button">Get in Touch</a>
+      </div>
     </div>
-  </header>
 
-   
-    
-       <div class="banner">
-        
-        <div class="banner-overlay">
-            <img src="images/aptlogo.png" alt="Logo" class="banner-logo">
-            <a href="contact.html" class="button">Get in Touch</a>
-        </div>
-    </div>
-    
     <div class="container">
         <h2 class="about-us-header">About Us</h2>
         <p>Welcome to A.P.T Builders, where quality craftsmanship meets affordability. 
@@ -66,232 +47,414 @@
 
         <p> A.P.T Builders, your vision is our priority. Whether it’s a small repair or a full scale renovation, 
             we tailor our services to meet your needs with precision and care. Get in touch today and let’s bring your project to life.</p>
-        
-            <section>
-                <h2 class="recent-projects-header">Recent Projects</h2>
-                <div class="slider-container">
-                   
-                    <div class="slider" id="projectSlider">
-                        <img src="images/main image for recent projects.jpg" alt="Image 1">
-                        <img src="images/dug hole for pool.jpeg" alt="Image 2">
-                        <img src="images/pool liner being craned in.jpeg" alt="Image 3">
-                        <img src="images/edit empty pool liner in situ.jpeg" alt="Image 4">
-                        <img src="images/only sides of structure and pool.jpeg" alt="Image 5">
-                        <img src="images/open structure with pool.jpeg" alt="Image 6">
-                        <img src="images/wide view of skeleton structure with pool.jpeg" alt="Image 7">
-                        <img src="images/top view of skeleton structure and pool.jpeg" alt="Image 8">
-                        <img src="images/skeleton structure with pool.jpeg" alt="Image 9">
-                        <img src="images/structure half build.jpeg" alt="Image 10">
-                        <img src="images/structure over pool.jpeg" alt="Image 11">
-                        <img src="images/interior metal structure inside.jpeg" alt="Image 12">
-                        <img src="images/Swimming Pool Area (1).jpeg" alt="Image 15">
-                        <img src="images/Swimming Pool Area (5).jpeg" alt="Image 13">
-                        <img src="images/Swimming Pool Area (3).jpeg" alt="Image 14">
-                        <img src="images/swimming pool floor.jpeg" alt="image">
-                        <img src="images/Swimming Pool Area (13).jpeg" alt="Image 16">
-                        <img src="images/Swimming Pool Area (10).jpeg" alt="Image 17">
-                        <img src="images/Swimming Pool Area (4).jpeg" alt="Image 18">
-                        <img src="images/Swimming Pool Area (9).jpeg" alt="Image 19">
-                        <img src="images/Swimming Pool Area (15).jpeg" alt="Image 20">
-                        <img src="images/Swimming Pool Area (12).jpeg" alt="Image 21">
-                        <img src="images/Swimming Pool Area (6).jpeg" alt="Image 22">
-                        <img src="images/Swimming Pool Area (11).jpeg" alt="Image 23">
-                        <img src="images/Swimming Pool Area (8).jpeg" alt="Image 24">
-                        <img src="images/Swimming Pool Area (7).jpeg" alt="Image 25">
-                        
-                       
-                       </div>
-                       <div class="slider-overlay-heading">Indoor Swimming Pool Build</div>
-                    <button class="slider-btn prev" onclick="moveSlide(-1)">&#10094;</button>
-                    <button class="slider-btn next" onclick="moveSlide(1)">&#10095;</button>
-                </div>
-                <div class="button-container">
-                    <a href="gallery.html" class="project-button">View More Projects</a>
-                </div>
 
-                
-            </section>
+      <section>
+        <h2 class="recent-projects-header">Recent Projects</h2>
+        <div class="slider-container">
+          <div class="slider" id="projectSlider">
            
-            
+            <img src="images/main image for recent projects.jpg" alt="Image 1">
+            <img src="images/spbeg.jpg" alt="Image 1" >
+            <img src="images/spbeg2.jpg" alt="Image 2">
+            <img src="images/spbeg3.jpg" alt="Image 3">
+            <img src="images/spbeg4.jpg" alt="Image 4">
+            <img src="images/spbeg5.jpg" alt="Image 5">
+            <img src="images/spbeg6.jpg" alt="Image 6">
+            <img src="images/spbeg7.jpg" alt="Image 7" >
+            <img src="images/spbeg8.jpg" alt="Image 8" >
+            <img src="images/spbeg9.jpg" alt="Image 9">
+            <img src="images/spbeg10.jpg" alt="Image 10">
+            <img src="images/spbeg11.jpg" alt="Image 11">
+            <img src="images/spbeg13.jpg" alt="Image 13">
+            <img src="images/spbeg14.jpg" alt="Image 14">
+            <img src="images/spbeg15.jpg" alt="Image 15">
+            <img src="images/spbeg16.jpg" alt="Image 16">
+            <img src="images/spbeg17.jpg" alt="Image 17">
+            <img src="images/spbeg18.jpg" alt="Image 18">
+            <img src="images/spbeg19.jpg" alt="Image 19">
+            <img src="images/spbeg20.jpg" alt="Image 20">
+            <img src="images/spbeg21.jpg" alt="Image 21">
+            <img src="images/spbeg22.jpg" alt="Image 22">
+            <img src="images/spbeg23.jpg" alt="Image 23">
+            <img src="images/spbeg24.jpg" alt="Image 24">
+            <img src="images/spbeg25.jpg" alt="Image 25">
+            <img src="images/dug hole for pool.jpeg" alt="Image 26">
+            <img src="images/pool liner being craned in.jpeg" alt="Image 27">
+            <img src="images/edit empty pool liner in situ.jpeg" alt="Image 28">
+            <img src="images/only sides of structure and pool.jpeg" alt="Image 29">
+            <img src="images/open structure with pool.jpeg" alt="Image 30">
+            <img src="images/wide view of skeleton structure with pool.jpeg" alt="Image 31">
+            <img src="images/top view of skeleton structure and pool.jpeg" alt="Image 32">
+            <img src="images/skeleton structure with pool.jpeg" alt="Image 33">
+            <img src="images/structure half build.jpeg" alt="Image 34">
+            <img src="images/structure over pool.jpeg" alt="Image 35">
+            <img src="images/interior metal structure inside.jpeg" alt="Image 36">
+            <img src="images/Swimming Pool Area (1).jpeg" alt="Image 37">
+            <img src="images/Swimming Pool Area (5).jpeg" alt="Image 38">
+            <img src="images/Swimming Pool Area (3).jpeg" alt="Image 39">
+            <img src="images/swimming pool floor.jpeg" alt="image" class="lightbox-img">
+            <img src="images/Swimming Pool Area (13).jpeg" alt="Image 40">
+            <img src="images/Swimming Pool Area (10).jpeg" alt="Image 41">
+            <img src="images/Swimming Pool Area (4).jpeg" alt="Image 42">
+            <img src="images/Swimming Pool Area (9).jpeg" alt="Image 43">
+            <img src="images/Swimming Pool Area (15).jpeg" alt="Image 44">
+            <img src="images/Swimming Pool Area (12).jpeg" alt="Image 45">
+            <img src="images/Swimming Pool Area (6).jpeg" alt="Image 46">
+            <img src="images/Swimming Pool Area (11).jpeg" alt="Image 47">
+            <img src="images/Swimming Pool Area (8).jpeg" alt="Image 48">
+            <img src="images/Swimming Pool Area (7).jpeg" alt="Image 49">
+            <img src="images/spdigpatio.jpg" alt="Image 50">
+            <img src="images/spdigpatio2.jpg" alt="Image 51">
+            <img src="images/spdigpipe.jpg" alt="Image 52">
+            <img src="images/spdigpipe2.jpg" alt="Image 53">
+            <img src="images/spdigpipe3.jpg" alt="Image 54">
+            <img src="images/spdigpipe4.jpg" alt="Image 55">
+            <img src="images/spdigpipe5.jpg" alt="Image 56">
+            <img src="images/spdigpipe6.jpg" alt="Image 57">
+            <img src="images/spdigpipe7.jpg" alt="Image 58">
+            <img src="images/spdrain.jpg" alt="Image 59">
+            <img src="images/spdrain2.jpg" alt="Image 60">
+            <img src="images/spstairs.jpg" alt="Image 61">
+            <img src="images/sppatiobeg.jpg" alt="Image 62">
+            <img src="images/sppatiosidebeg.jpg" alt="Image 63">
+            <img src="images/sppatiosidebeg3.jpg" alt="Image 64">
+            <img src="images/sppatiopipe.jpg" alt="Image 65">
+            <img src="images/sppatiopeg2.jpg" alt="Image 66">
+            <img src="images/sppatiopeg3.jpg" alt="Image 67">
+            <img src="images/sppatiopeg4.jpg" alt="Image 68">
+            <img src="images/sppatiosidepeg.jpg" alt="Image 69">
+            <img src="images/sppatiosidepeg2.jpg" alt="Image 70">
+            <img src="images/sppatiosidepeg3.jpg" alt="Image 71">
+            <img src="images/sppatiopeg.jpg" alt="Image 72">
+            <img src="images/spfinishedpatiostairs.jpg" alt="Image 73">
+           
+          </div>
 
-            <h2 class="services-header">Our Services</h2>
-        
-            
+          <div class="slider-overlay-heading">Indoor Swimming Pool Build</div>
+          <button class="slider-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+          <button class="slider-btn next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+        <div class="button-container">
+          <a href="gallery.html" class="project-button">View More Projects</a>
+        </div>
+      </section>
+
+      <h2 class="services-header">Our Services</h2>
+               
+      <div class="bullet-container">
                 
-            <div class="bullet-container">
-                
-                <div class="bullet-box">
-                    <a class="bullet-link" href="roofing.html">
-                    <img src="images/roof.png" alt="Icon-roof">
-                    <h5 style="font-size: 18px;">Roofing</h5>
-                    <h6 style="font-size: small; font-style: italic; margin-bottom: 5px;">Repairs/New</h6>
-                    <p style="font-size: 11px">From repairing both old and new roofs, from fixing leaks, replacing damaged shingles, and restoring worn out 
-                        structures to ensuring new roofs stay in top condition with preventive maintenance and timely adjustments.</p>
+        <div class="bullet-box">
+            <a class="bullet-link" href="roofing.html">
+            <img src="images/roof.png" alt="Icon-roof">
+            <h5 style="font-size: 18px;">Roofing</h5>
+            <h6 style="font-size: small; font-style: italic; margin-bottom: 5px;">Repairs/New</h6>
+            <p style="font-size: 11px">From repairing both old and new roofs, from fixing leaks, replacing damaged shingles, and restoring worn out 
+                structures to ensuring new roofs stay in top condition with preventive maintenance and timely adjustments.</p>
+        </div>
+    </a>
+  
+
+    
+    
+
+        <div class="bullet-box">
+            <a class="bullet-link" href="bathrooms.html">
+            <img src="images/bathtub_5590126.png" alt="Icon-bath">
+            <h5 style="font-size: 18px;">Bathrooms</h5>
+            <h6 style="font-size: small; font-style: italic; margin-bottom: 5px;">Replacements/Alterations</h6>
+            <p style="font-size: 11px">From complete bathroom replacements to minor alterations, we handle everything from upgrading 
+                fixtures and retiling to optimizing
+                 layouts and improving functionality, ensuring a fresh and contemporary space that suits your lifestyle</p>
+
+        </div>
+        </a>
+
+        <div class="bullet-box">
+            <a class="bullet-link" href="kitchens.html">
+            <img src="images/kitchen_2852011.png" alt="Icon">
+            <h5 style="font-size: 18px;">Kitchens</h5>
+            <h6 style="font-size: small; font-style: italic;margin-bottom: 5px;">Replaments/Alterations</h6>
+            <p style="font-size: 11px;">From complete bathroom replacements to minor alterations, we handle everything from upgrading 
+                fixtures and retiling to 
+                optimizing layouts and improving functionality, ensuring a fresh and contemporary space that suits your lifestyle.</p>
+        </div>
+    </a>
+    
+    
+    
+        <div class="bullet-box">
+            <a class="bullet-link" href="brickwork.html">
+            <img src="images/masonry_14382129.png" alt="Icon">
+            <h5 style="font-size: 18px;">Brickwork</h5>
+            <h6 style="font-size: small; font-style: italic; margin-bottom: 5px;">Re-pointing/Other</h6>
+            <p style="font-size: 11px;"> Delivering high-quality brickwork and re-pointing, from constructing 
+                new walls and features to carefully restoring worn mortar joints, 
+                enhancing both the structural integrity and aesthetic appeal of your property</p>
+        </div>
+        </a>
+
+        <div class="bullet-box">
+            <a class="bullet-link" href="blockpaving.html">
+            <img src="images/bricks_16739854.png" alt="Icon">
+            <h5 style="font-size: 18px;">Block Paving</h5>
+            <h6 style="font-size: small; font-style: italic; margin-bottom: 5px;">Driveways/Pathways</h6>
+            <p style="font-size: 11px">With expertly laid block paving, driveways, and pathways, 
+                offering a range of designs and materials to create durable, 
+                weather resistant, and visually appealing surfaces tailored to your home or business.</p>
+        </div>
+    </a>
+
+
+        <div class="bullet-box">
+            <a class="bullet-link" href="landscaping.html">
+            <img src="images/Landscaping.png" alt="Icon">
+            <h5 style="font-size: 18px;">Landscaping</h5>
+            <h6 style="font-size: small; font-style: italic; margin-bottom: 5px;">Groundwork/General</h6>
+            <p style="font-size: 11px;">We cover all aspects of landscaping, from groundworks and drainage to turfing, planting, 
+               and garden maintenance, delivering high quality solutions that enhance and sustain your outdoor space.</p>
+            </div>
+
+        </a>
+
+            <div class="bullet-box">
+                <a class="bullet-link" href="decorating.html">
+                <img src="images/painting_10722140.png" alt="Icon">
+                <h5 style="font-size: 18px;">Painting & Decorating</h5>
+                <h6 style="font-size: small; font-style: italic; margin-bottom: 5px;">Interior/Exterior</h6>
+                <p style="font-size: 11px;">We provide high quality painting and decorating services for both interior and exterior spaces. 
+                    From refreshing walls and ceilings to carefully finishing woodwork such as doors, skirtings, and window frames, we ensure a clean, 
+                    professional finish throughout. Our exterior work also includes durable, weather resistant coatings to protect and enhance your property.</p>
                 </div>
             </a>
-          
-
-            
-            
 
                 <div class="bullet-box">
-                    <a class="bullet-link" href="bathrooms.html">
-                    <img src="images/bathtub_5590126.png" alt="Icon-bath">
-                    <h5 style="font-size: 18px;">Bathrooms</h5>
-                    <h6 style="font-size: small; font-style: italic; margin-bottom: 5px;">Replacements/Alterations</h6>
-                    <p style="font-size: 11px">From complete bathroom replacements to minor alterations, we handle everything from upgrading 
-                        fixtures and retiling to optimizing
-                         layouts and improving functionality, ensuring a fresh and contemporary space that suits your lifestyle</p>
-
-                </div>
-                </a>
-
-                <div class="bullet-box">
-                    <a class="bullet-link" href="kitchens.html">
-                    <img src="images/kitchen_2852011.png" alt="Icon">
-                    <h5 style="font-size: 18px;">Kitchens</h5>
-                    <h6 style="font-size: small; font-style: italic;margin-bottom: 5px;">Replaments/Alterations</h6>
-                    <p style="font-size: 11px;">From complete bathroom replacements to minor alterations, we handle everything from upgrading 
-                        fixtures and retiling to 
-                        optimizing layouts and improving functionality, ensuring a fresh and contemporary space that suits your lifestyle.</p>
-                </div>
-            </a>
-            
-            
-            
-                <div class="bullet-box">
-                    <a class="bullet-link" href="brickwork.html">
-                    <img src="images/masonry_14382129.png" alt="Icon">
-                    <h5 style="font-size: 18px;">Brickwork</h5>
-                    <h6 style="font-size: small; font-style: italic; margin-bottom: 5px;">Re-pointing/Other</h6>
-                    <p style="font-size: 11px;"> Delivering high-quality brickwork and re-pointing, from constructing 
-                        new walls and features to carefully restoring worn mortar joints, 
-                        enhancing both the structural integrity and aesthetic appeal of your property</p>
-                </div>
-                </a>
-
-                <div class="bullet-box">
-                    <a class="bullet-link" href="blockpaving.html">
-                    <img src="images/bricks_16739854.png" alt="Icon">
-                    <h5 style="font-size: 18px;">Block Paving</h5>
-                    <h6 style="font-size: small; font-style: italic; margin-bottom: 5px;">Driveways/Pathways</h6>
-                    <p style="font-size: 11px">With expertly laid block paving, driveways, and pathways, 
-                        offering a range of designs and materials to create durable, 
-                        weather resistant, and visually appealing surfaces tailored to your home or business.</p>
-                </div>
-            </a>
-
-
-                <div class="bullet-box">
-                    <a class="bullet-link" href="landscaping.html">
-                    <img src="images/Landscaping.png" alt="Icon">
-                    <h5 style="font-size: 18px;">Landscaping</h5>
-                    <h6 style="font-size: small; font-style: italic; margin-bottom: 5px;">Groundwork/General</h6>
-                    <p style="font-size: 11px;">We cover all aspects of landscaping, from groundworks and drainage to turfing, planting, 
-                       and garden maintenance, delivering high quality solutions that enhance and sustain your outdoor space.</p>
+                    <a class="bullet-link" href="extensions.html">
+                    <img src="images/house_795561.png" alt="Icon">
+                    <h5 style="font-size: 18px;">Extensions</h5>
+                    <h6 style="font-size: small; font-style: italic; margin-bottom: 5px;">Full Builds/Conversions</h6>
+                    <p style="font-size: 11px;">We undertake complete new builds, home extensions, and conversions with precision and care, managing each stage from groundwork to finishing touches. Whether you’re expanding your living space, converting a loft or garage, 
+                        or starting from the ground up, we ensure structural integrity, practical design, and a high quality finish tailored to your needs.</p>
                     </div>
-
                 </a>
 
-                    <div class="bullet-box">
-                        <a class="bullet-link" href="decorating.html">
-                        <img src="images/painting_10722140.png" alt="Icon">
-                        <h5 style="font-size: 18px;">Painting & Decorating</h5>
-                        <h6 style="font-size: small; font-style: italic; margin-bottom: 5px;">Interior/Exterior</h6>
-                        <p style="font-size: 11px;">We provide high quality painting and decorating services for both interior and exterior spaces. 
-                            From refreshing walls and ceilings to carefully finishing woodwork such as doors, skirtings, and window frames, we ensure a clean, 
-                            professional finish throughout. Our exterior work also includes durable, weather resistant coatings to protect and enhance your property.</p>
-                        </div>
-                    </a>
 
-                        <div class="bullet-box">
-                            <a class="bullet-link" href="extensions.html">
-                            <img src="images/house_795561.png" alt="Icon">
-                            <h5 style="font-size: 18px;">Extensions</h5>
-                            <h6 style="font-size: small; font-style: italic; margin-bottom: 5px;">Full Builds/Conversions</h6>
-                            <p style="font-size: 11px;">We undertake complete new builds, home extensions, and conversions with precision and care, managing each stage from groundwork to finishing touches. Whether you’re expanding your living space, converting a loft or garage, 
-                                or starting from the ground up, we ensure structural integrity, practical design, and a high quality finish tailored to your needs.</p>
-                            </div>
-                        </a>
-    
-
-            </div>
-
-                  
-                    <h2 class="bottom-header">and all general building work...</h2>
-                    <h6 class="bottom-header">Any questions, please do not hestitate to contact us.</h6>
-
-            
-            <div class="button-container">
-                <a href="contact.html" class="project-button">Contact Us</a>
-              </div>
-
-              
-              
-
-              
-            </div>
-
-    
-<footer class="site-footer">
-    <div class="contact-us-container">
-      <span class="contact-info">
-        <a href="tel:07794083532">📞 Alan - 07794083532</a>
-      </span>
-      <span class="contact-info">
-        <a href="mailto:a.p.t.builders@hotmail.co.uk">✉️ a.p.t.builders@hotmail.co.uk</a>
-      </span>
     </div>
-  </footer>
 
-    
- 
+      <h2 class="bottom-header">and all general building work...</h2>
+      <h6 class="bottom-header">Any questions, please do not hesitate to contact us.</h6>
+      <div class="button-container">
+        <a href="contact.html" class="project-button">Contact Us</a>
+      </div>
+    </div>
 
+    <footer class="site-footer">
+      <div class="contact-us-container">
+        <span class="contact-info"><a href="tel:07794083532">📞 Alan - 07794083532</a></span>
+        <span class="contact-info"><a href="mailto:a.p.t.builders@hotmail.co.uk">✉️ a.p.t.builders@hotmail.co.uk</a></span>
+      </div>
+    </footer>
+  </div>
 
+  <!-- SLIDER & MENU SCRIPTS -->
+  <script>
+    let currentIndex = 0;
 
+    function moveSlide(step) {
+      const slider = document.getElementById("projectSlider");
+      const images = slider.querySelectorAll("img");
+      currentIndex += step;
+      if (currentIndex < 0) currentIndex = images.length - 1;
+      if (currentIndex >= images.length) currentIndex = 0;
+      slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
 
- 
+    let startX = 0;
+    document.getElementById("projectSlider").addEventListener("touchstart", function (e) {
+      startX = e.touches[0].clientX;
+    });
+    document.getElementById("projectSlider").addEventListener("touchend", function (e) {
+      const endX = e.changedTouches[0].clientX;
+      const diff = startX - endX;
+      if (diff > 50) moveSlide(1);
+      else if (diff < -50) moveSlide(-1);
+    });
+
+    function toggleMenu() {
+      const menu = document.getElementById("burgerMenu");
+      menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+    }
+  </script>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <button class="lightbox-nav lightbox-prev">&#10094;</button>
+    <img class="lightbox-content" id="lightbox-img" />
+    <button class="lightbox-nav lightbox-next">&#10095;</button>
+  </div>
   
+
+  <style>
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      padding-top: 20px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+    }
   
- 
-       
-          
-    <script>
-        let currentIndex = 0;
+    .lightbox-content {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      max-height: 80%;
+      animation: zoom 0.3s ease-in-out;
+    }
+  
+    @keyframes zoom {
+      from {
+        transform: scale(0.5);
+      }
+      to {
+        transform: scale(1);
+      }
+    }
+  
+    .lightbox-close {
+      position: absolute;
+      top: 30px;
+      right: 50px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 1001;
+    }
+  
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 60px;
+      color: white;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 1001;
+      user-select: none;
+    }
+  
+    .lightbox-prev {
+      left: 20px;
+    }
+  
+    .lightbox-next {
+      right: 20px;
+    }
+  </style>
+  
 
-        function moveSlide(step) {
-            const slider = document.getElementById("projectSlider");
-            const images = slider.querySelectorAll("img");
-            currentIndex += step;
+  <script>
+   
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const images = Array.from(document.querySelectorAll('#projectSlider img'));
+  let currentImageIndex = 0;
 
-            if (currentIndex < 0) currentIndex = images.length - 1;
-            if (currentIndex >= images.length) currentIndex = 0;
+  images.forEach((img, index) => {
+    img.addEventListener('click', () => {
+      currentImageIndex = index;
+      showLightboxImage();
+    });
+  });
 
-            slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-        }
+  function showLightboxImage() {
+    lightboxImg.src = images[currentImageIndex].src;
+    lightbox.style.display = 'flex';
+  }
 
-        // Touch swipe support
-        let startX = 0;
-        document.getElementById("projectSlider").addEventListener("touchstart", function(e) {
-            startX = e.touches[0].clientX;
-        });
-        document.getElementById("projectSlider").addEventListener("touchend", function(e) {
-            const endX = e.changedTouches[0].clientX;
-            const diff = startX - endX;
-            if (diff > 50) moveSlide(1);
-            else if (diff < -50) moveSlide(-1);
-        });
-    </script>
-    
-    
-    <script>
-        function toggleMenu() {
-          const menu = document.getElementById("burgerMenu");
-          menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
-        }
-      </script>
-      
+  document.querySelector('.lightbox-close').addEventListener('click', () => {
+    lightbox.style.display = 'none';
+  });
 
-    
+  document.querySelector('.lightbox-prev').addEventListener('click', () => {
+    currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+    showLightboxImage();
+  });
+
+  document.querySelector('.lightbox-next').addEventListener('click', () => {
+    currentImageIndex = (currentImageIndex + 1) % images.length;
+    showLightboxImage();
+  });
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+      lightbox.style.display = 'none';
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === "Escape") {
+      lightbox.style.display = 'none';
+    } else if (e.key === "ArrowRight") {
+      currentImageIndex = (currentImageIndex + 1) % images.length;
+      showLightboxImage();
+    } else if (e.key === "ArrowLeft") {
+      currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+      showLightboxImage();
+    }
+  });
+
+
+  </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
