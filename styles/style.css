@@ -618,12 +618,6 @@ header h1 {
   transition: transform 0.3s ease;
 }
 
-
-
-
-
-
-
 .gallery img:hover {
   transform: scale(1.03);
 }
@@ -1276,11 +1270,13 @@ margin-bottom: 30px;
 
 
 .bottom-header {
-width: fit-content;
-display: block;
-margin: auto;
-padding-top: 30px;
-font-style: italic;
+  width: 100%;
+  text-align: center; /* This is the key to keep wrapped lines centered */
+  margin-top: 30px;
+  padding: 0 10px;
+  font-style: italic;
+  font-size: 16px;
+  display: block; /* Make sure it's treated like a block element */
 }
 
 
