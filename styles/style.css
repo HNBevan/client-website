@@ -1200,7 +1200,7 @@ transition: background-color 0.3s ease, color 0.3s ease;
 
 
 .bullet-box:hover {
-  background-color:   #ff6600; /* hover color */
+  background-color:   #ff6600c8; /* hover color */
   color: white; /* change text color if you want */
   transform: translateY(-5px); /* lifts it up by 5px */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* adds soft shadow */
