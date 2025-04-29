@@ -340,7 +340,7 @@ body, html {
 }
 
 .contact-container button:hover {
-    color: #2d0202;
+    opacity: 0.8;
 
     
 }
@@ -432,7 +432,7 @@ header h1 {
 
 /* Hover effect */
 .back-to-gallery-button:hover {
-  color: #2d0202;
+  opacity: 0.8;
   text-decoration: none;
  
 }
@@ -474,6 +474,7 @@ header h1 {
     display: block;
     transition: transform 0.3s ease;
     
+    
  
 }
 
@@ -514,6 +515,8 @@ header h1 {
 }
 
 
+
+
  
 
 
@@ -541,7 +544,7 @@ header h1 {
 
 
 .gallery-box:hover .overlay {
-    background-color: #401903ba;
+    opacity: 0.8;
    
 }
 
@@ -570,22 +573,30 @@ header h1 {
   color: #2d0202;
 }
 
-.gallery {
+.gallery .lightbox-gallery {
+  /* your existing rules… */
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-
   justify-content: center;
 
-  
+  /* add this: */
+  align-self: flex-start;  /* push the gallery to the top edge of its flex parent */
+  margin-top: 1em;         /* optional extra breathing room under your button */
 }
+
+.gallery {
+  justify-content: flex-start;
+  margin-top: 0;
+}
+
 
 .gallery img {
   width: 120px;
   height: 120px;
   object-fit: cover;
   border-radius: 5px;
-
+ 
   cursor: pointer;
   
 
@@ -593,6 +604,9 @@ header h1 {
 
   transition: transform 0.3s ease;
 }
+
+
+
 
 
 
@@ -653,6 +667,7 @@ header h1 {
 
 
 
+
 /*main page*/
 
 
@@ -686,6 +701,7 @@ header h1 {
   height: 90px;
   justify-content: space-between;
   margin-bottom: 3px;
+ 
   
   
   
@@ -712,6 +728,7 @@ header h1 {
   font-weight: bold;
   margin-left:-60px;
   white-space: nowrap;
+
 
 
   
@@ -814,6 +831,7 @@ background-position: center;
 height: 250px;
 width: 100%;
 background-image:url("../images/Banner\ two.jpg");
+border-radius: 5px;
 background-size: cover;
 display: flex;
 align-items: center;
@@ -873,7 +891,7 @@ margin-top: -40px;
 }
 
 .button:hover {
-    color:#2d0202;
+    opacity: 0.8;
 }
 
 
@@ -907,6 +925,7 @@ h2{text-align: center;}
     margin-top: 20px; 
 }
 
+
 .project-button {
     display: inline-block;
     background-color: #ff6600;
@@ -920,7 +939,9 @@ h2{text-align: center;}
 
 
 .project-button:hover {
-    color: #2d0202; 
+    opacity: 0.8; 
+
+ 
 }
 
 
@@ -1015,7 +1036,7 @@ padding: 0;
 
 .lightbox-prev:hover,
 .lightbox-next:hover {
-  color: #ff6600;
+  color: #434040;
 }
 
 .lightbox-prev {
@@ -1040,6 +1061,7 @@ padding: 0;
     height: 100%;
     object-fit: cover;
     flex-shrink: 0;
+    border-radius: 5px;
   }
   
   /* Navigation Arrows */
@@ -1179,7 +1201,7 @@ color: #333
 }
 
 .bullet-link :hover {
-  color: #000000;
+  opacity: 0.8;
 }
 
 .about-us-header {
@@ -1189,7 +1211,7 @@ margin-bottom: 30px;
 
 
 .button-bottom:hover {
-  color: #2d0202;
+  opacity: 0.8;
 }
 
 .button-bottom {
