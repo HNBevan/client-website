@@ -114,6 +114,7 @@ body, html {
   margin-top: 4px;
   background-repeat: no-repeat;
   background-position: center;
+  border-radius: 5px;
  
 }
 
@@ -126,6 +127,7 @@ body, html {
   margin-top: 4px;
   background-repeat: no-repeat;
   background-position: center;
+  border-radius: 5px;
 }
 
 .service-banner-kitchens {
@@ -137,6 +139,7 @@ body, html {
   margin-top: 4px;
   background-repeat: no-repeat;
   background-position: center;
+  border-radius: 5px;
 }
 
 .service-banner-brickwork {
@@ -148,6 +151,7 @@ body, html {
   margin-top: 4px;
   background-repeat: no-repeat;
   background-position: center;
+  border-radius: 5px;
 }
 
 .service-banner-blockpaving{
@@ -159,6 +163,7 @@ body, html {
   margin-top: 4px;
   background-repeat: no-repeat;
   background-position: center;
+  border-radius: 5px;
 }
 
 .service-banner-landscaping{
@@ -170,6 +175,7 @@ body, html {
   margin-top: 4px;
   background-repeat: no-repeat;
   background-position: center;
+  border-radius: 5px;
 }
 
 .service-banner-decorating {
@@ -181,6 +187,7 @@ body, html {
   margin-top: 4px;
   background-repeat: no-repeat;
   background-position: center;
+  border-radius: 5px;
 }
 
 .service-banner-extension {
@@ -192,6 +199,7 @@ body, html {
   margin-top: 4px;
   background-repeat: no-repeat;
   background-position: center;
+  border-radius: 5px;
 }
 
 .service-banner-services {
@@ -204,6 +212,7 @@ body, html {
   background-repeat: no-repeat;
   background-position: center;
   text-align: center;
+  border-radius: 5px;
 
 }
 
