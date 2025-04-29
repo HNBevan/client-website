@@ -43,21 +43,22 @@
         <h2>Contact Us</h2>
         <p>Fill in the form below, and we'll get back to you as soon as possible.</p>
 
-        <form action="https://formsubmit.co/alan@aptbuilders.co.uk" method="POST">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="phone">Phone Number:</label>
-            <input type="tel" id="phone" name="phone" required>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
-
-            <button class="button" type="submit">Send Message</button>
+        <form action="https://formsubmit.co/alan@aptbuilders.co.uk" method="POST" onsubmit="showConfirmation()">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+        
+          <label for="phone">Phone Number:</label>
+          <input type="tel" id="phone" name="phone" required>
+        
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+        
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+        
+          <button class="button" type="submit">Send Message</button>
         </form>
+        
 
         <a href="index.html">
             <button class="button">Back to Home</button>
@@ -84,6 +85,13 @@
         menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
       }
     </script>
+
+<script>
+  function showConfirmation() {
+    alert("Message Sent");
+  }
+  </script>
+  
     
 
 </body>
