@@ -58,6 +58,10 @@ body, html {
   color: white;
 }
 
+.service-box:hover img {
+  filter: brightness(0) invert(1); /* makes icon white */
+}
+
 .service-page {
   margin-top: 30px;
   margin-left: 40px;
@@ -668,7 +672,9 @@ header h1 {
 
 .lightbox-prev:hover,
 .lightbox-next:hover {
-  color:#2d0202;
+  color:#ffffff;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 5px;
 }
 
 .lightbox-prev { left: 20px; }
@@ -1046,7 +1052,9 @@ padding: 0;
 
 .lightbox-prev:hover,
 .lightbox-next:hover {
-  color: #434040;
+  color:#ffffff;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 5px;
 }
 
 .lightbox-prev {
@@ -1091,6 +1099,7 @@ padding: 0;
   
   .slider-btn:hover {
     background: rgba(0, 0, 0, 0.6);
+   
   }
   
   .slider-btn.prev {
@@ -1158,6 +1167,8 @@ grid-template-columns: repeat(1, 1fr); /* 3 columns per row */
 
 }
 
+
+
 @media (max-width: 900px) {
 .bullet-box {
     width: 45%; /* Two per row on tablets */
@@ -1184,8 +1195,32 @@ border: 1px solid #ddd;
 border-radius: 10px;
 background: rgba(0, 0, 0, 0.05);
 padding: 15px;
+transition: background-color 0.3s ease, color 0.3s ease;
 
 }
+
+.bullet-box:hover img {
+  filter: brightness(0) invert(1); /* makes icon white */
+}
+
+
+
+.bullet-box:hover {
+  background-color:   #ff6600; /* hover color */
+  color: white; /* change text color if you want */
+  transform: translateY(-5px); /* lifts it up by 5px */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* adds soft shadow */
+}
+
+
+
+.bullet-box:hover h5,
+.bullet-box:hover h6,
+.bullet-box:hover p {
+  color: rgb(255, 255, 255);
+}
+
+
 
 
 
@@ -1198,7 +1233,7 @@ margin-bottom: 10px;
 .bullet-box p {
     margin: 0;
 font-size: 14px;
-color: #333
+color: #000000
 
 }
 
@@ -1339,3 +1374,6 @@ font-style: italic;
 }
 
 
+* {
+  -webkit-tap-highlight-color: transparent;
+}
