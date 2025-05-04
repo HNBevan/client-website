@@ -41,6 +41,21 @@ body, html {
   gap: 20px;
 }
 
+
+  @media (max-width:1050px)  {
+    .services-grid{
+      display: flex;
+flex-wrap: wrap; /* Allows items to wrap to the next row */
+justify-content: center; /* Centers the items */
+gap: 10px; /* Adds space between boxes */
+max-width: 900px; /* Prevents boxes from spreading too wide */
+margin: 0 auto; /* Centers the container */
+grid-template-columns: repeat(1, 1fr); /* 3 columns per row */
+    }
+  }
+  
+
+
 .service-box {
   background-color: #f2f2f2;
   padding: 20px;
@@ -727,6 +742,8 @@ header h1 {
   margin-left: -60px;
  }
 
+
+
 .head-title {
   display: flex;
   white-space: nowrap;
@@ -922,9 +939,11 @@ padding: 35px;
         color: green;
         margin-right: 10px;
 
+    
+
 }
 
-p{line-height: 1.6; margin-bottom: 40px;}
+p{line-height: 1.6; margin-bottom: 40px; text-align: center;}
 
 h2{text-align: center;}
 
