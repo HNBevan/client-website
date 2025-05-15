@@ -17,13 +17,32 @@
       </a>   
       <p class="head-title">Decorative Services</p>
       <nav class="burger-nav">
-        <button class="burger-toggle" onclick="toggleMenu()">☰</button>
-        <div class="burger-menu" id="burgerMenu">
+        <!-- burger button -->
+        <button
+          id="burgerToggle"
+          class="burger-toggle"
+          aria-label="Toggle menu"
+        >
+          ☰
+        </button>
+  
+        <!-- off-canvas menu panel -->
+        <div
+          id="burgerMenu"
+          class="burger-menu"
+          aria-hidden="true"
+        >
           <a href="index.html">Home</a>
           <a href="gallery.html">Gallery</a>
           <a href="services.html">Services</a>
           <a href="contact.html">Contact Us</a>
         </div>
+  
+        <!-- overlay: sits between page and menu -->
+        <div
+          id="menuOverlay"
+          class="menu-overlay"
+        ></div>
       </nav>
     </div>
     
@@ -97,10 +116,27 @@
   </footer>
 
   <script>
-    function toggleMenu() {
-      const menu = document.getElementById("burgerMenu");
-      menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+  document.addEventListener('DOMContentLoaded', () => {
+  const burgerToggle = document.getElementById('burgerToggle');
+  const menu         = document.getElementById('burgerMenu');
+  const overlay      = document.getElementById('menuOverlay');
+
+  function toggleMenu() {
+    const isOpen = menu.classList.toggle('open');
+    overlay.classList.toggle('visible', isOpen);
+    menu.setAttribute('aria-hidden', !isOpen);
+  }
+
+  burgerToggle.addEventListener('click', toggleMenu);
+  overlay.addEventListener('click', toggleMenu);
+
+  // close on Escape
+  document.addEventListener('keyup', e => {
+    if (e.key === 'Escape' && menu.classList.contains('open')) {
+      toggleMenu();
     }
+  });
+});
   </script>
   
 

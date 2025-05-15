@@ -835,7 +835,7 @@ header h1 {
   top: 0; right: 0;
   width: 15%; 
   height: 100%;
-  background: #000000;
+  background: #000000da;
   text-align: center;
   text-decoration: none;
   transform: translateX(100%);
@@ -887,6 +887,7 @@ header h1 {
   color: #e87305;           /* or whatever accent you like */
   outline: none;            /* removes default focus outline */
   text-decoration: none; /* or leave none if you prefer */
+  
 }
 
 /* 2) Tablet (e.g. up to 1024px wide) */
