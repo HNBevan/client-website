@@ -833,10 +833,10 @@ header h1 {
 .burger-menu {
   position: fixed;
   top: 0; right: 0;
-  width: 15%; max-width: 300px;
+  width: 15%; 
   height: 100%;
   background: #000000;
- 
+  text-align: center;
   text-decoration: none;
   transform: translateX(100%);
   transition: transform 0.3s ease-in-out;
@@ -889,11 +889,29 @@ header h1 {
   text-decoration: none; /* or leave none if you prefer */
 }
 
-@media only screen and (max-width: 768px) {
+/* 2) Tablet (e.g. up to 1024px wide) */
+@media (max-width: 1024px) {
   .burger-menu {
-    width: 45%;
+    width: 30%;         /* a little wider for smaller screens */
+    max-width: none;
   }
 }
+
+/* 3) Small tablets / large phones (up to 768px wide) */
+@media (max-width: 768px) {
+  .burger-menu {
+    width: 30%;         /* more of the viewport */
+  }
+}
+
+/* 4) Mobile (up to 480px wide) */
+@media (max-width: 480px) {
+  .burger-menu {
+    width: 40%;         /* almost full-screen */
+  }
+}
+
+
 
 
 
