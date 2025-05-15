@@ -45,12 +45,12 @@ body, html {
   @media (max-width:1050px)  {
     .services-grid{
       display: flex;
-flex-wrap: wrap; /* Allows items to wrap to the next row */
-justify-content: center; /* Centers the items */
-gap: 10px; /* Adds space between boxes */
-max-width: 900px; /* Prevents boxes from spreading too wide */
-margin: 0 auto; /* Centers the container */
-grid-template-columns: repeat(1, 1fr); /* 3 columns per row */
+  flex-wrap: wrap; /* Allows items to wrap to the next row */
+  justify-content: center; /* Centers the items */
+  gap: 10px; /* Adds space between boxes */
+  max-width: 900px; /* Prevents boxes from spreading too wide */
+  margin: 0 auto; /* Centers the container */
+  grid-template-columns: repeat(1, 1fr); /* 3 columns per row */
     }
   }
   
@@ -823,32 +823,73 @@ header h1 {
   padding: 8px;
 }
 
+
+
+/* when “open” is toggled, panel slides into view */
+/* ---------------------------------
+   SLIDING MENU (from the RIGHT)
+   --------------------------------- */
+/* off-canvas panel */
 .burger-menu {
-  display: none;
-  position: absolute;
-  top: 100%; /* directly below the toggle */
-  right: 0;
-  background: white;
-  border-radius: 5px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  flex-direction: column;
-  min-width: 160px;
-  z-index: 10;
-}
-
-.burger-menu a {
-  padding: 10px 15px;
+  position: fixed;
+  top: 0; right: 0;
+  width: 15%; max-width: 300px;
+  height: 100%;
+  background: #000000;
+ 
   text-decoration: none;
-  color: black;
-  display: block;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  overflow-y: auto;
+}
+.burger-menu.open {
+  transform: translateX(0);
 }
 
-.burger-menu a:hover {
-  background-color: #f2f2f2;
+/* overlay behind the panel */
+.menu-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.4);
+
+  /* start hidden and non-interactive */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 900;
+}
+/* when menu is open, show overlay and make it clickable */
+.menu-overlay.visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
-  
-  
+/* Remove underlines and set custom color on burger-menu links */
+.burger-menu a {
+  text-decoration: none;   /* no underline */
+  color: #ffffff;              /* your desired color */
+  font-weight: 500;         /* optional: bolder look */
+  margin-bottom: 1rem;  
+  text-decoration: none;    /* spacing between items */
+}
+
+/* Optional: different color on hover/focus */
+.burger-menu a:hover,
+.burger-menu a:focus {
+  color: #e87305;           /* or whatever accent you like */
+  outline: none;            /* removes default focus outline */
+  text-decoration: none; /* or leave none if you prefer */
+}
+
+
 
 
 .banner {
