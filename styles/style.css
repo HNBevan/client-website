@@ -798,119 +798,218 @@ header h1 {
   }
 }
  
-
-
-
-
-
-
-
-
-
-.burger-nav {
-  position: relative;
-  margin-left: auto;
-  display: flex;
-  align-items: center;
-}
-
-.burger-toggle {
-  font-size: 28px;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-  padding: 8px;
-}
-
-
-
-/* when “open” is toggled, panel slides into view */
-/* ---------------------------------
-   SLIDING MENU (from the RIGHT)
-   --------------------------------- */
-/* off-canvas panel */
-.burger-menu {
-  position: fixed;
-  top: 0; right: 0;
-  width: 15%; 
-  height: 100%;
-  background: #000000da;
-  text-align: center;
-  text-decoration: none;
-  transform: translateX(100%);
-  transition: transform 0.3s ease-in-out;
-  z-index: 1000;
-  display: flex;
-  flex-direction: column;
-  padding: 2rem;
-  overflow-y: auto;
-}
-.burger-menu.open {
-  transform: translateX(0);
-}
-
-/* overlay behind the panel */
-.menu-overlay {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.4);
-
-  /* start hidden and non-interactive */
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-  z-index: 900;
-}
-/* when menu is open, show overlay and make it clickable */
-.menu-overlay.visible {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-}
-
-/* Remove underlines and set custom color on burger-menu links */
-.burger-menu a {
-  text-decoration: none;   /* no underline */
-  color: #ffffff;              /* your desired color */
-  font-weight: 500;         /* optional: bolder look */
-  margin-bottom: 1rem;  
-  text-decoration: none;    /* spacing between items */
-}
-
-/* Optional: different color on hover/focus */
-.burger-menu a:hover,
-.burger-menu a:focus {
-  color: #e87305;           /* or whatever accent you like */
-  outline: none;            /* removes default focus outline */
-  text-decoration: none; /* or leave none if you prefer */
+/* -----------------------
+   BURGER NAV & TOGGLE
+   ----------------------- */
+   .burger-nav {
+    position: relative;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+  }
   
-}
-
-/* 2) Tablet (e.g. up to 1024px wide) */
-@media (max-width: 1024px) {
-  .burger-menu {
-    width: 30%;         /* a little wider for smaller screens */
-    max-width: none;
+  .burger-toggle {
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 8px;
   }
-}
-
-/* 3) Small tablets / large phones (up to 768px wide) */
-@media (max-width: 768px) {
+  
+  /* ---------------------------------
+     OFF-CANVAS SLIDING MENU (RIGHT)
+     --------------------------------- */
   .burger-menu {
-    width: 30%;         /* more of the viewport */
+    position: fixed;
+    top: 0; 
+    right: 0;
+    /* desktop: 15% viewport, min 240px, max 300px */
+    width: clamp(240px, 15%, 300px);
+    height: 100vh;
+    background: #000000da;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+  
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    overflow-y: auto;
   }
-}
+  
+  .burger-menu.open {
+    transform: translateX(0);
+  }
+  
+  /* ---------------------
+     OVERLAY BEHIND MENU
+     --------------------- */
+  .menu-overlay {
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+  
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 900;
+  }
+  
+  .menu-overlay.visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  
+  /* ---------------------------------
+     BASE LINK STYLING IN BURGER MENU
+     --------------------------------- */
+  .burger-menu > a,
+  .accordion-link {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  
+  .burger-menu > a:hover,
+  .burger-menu > a:focus,
+  .accordion-link:hover,
+  .accordion-link:focus {
+    color: #e87305;
+    outline: none;
+  }
+  
+  /* ======================
+     ACCORDION CONTAINERS
+     ====================== */
+  .menu-item {
+    margin-bottom: 1rem;
+    margin-bottom: 5px;
+  }
+  
+  /* header holds link + arrow inline */
+  .accordion-header {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    line-height: 0.4;
+  }
+  
+  /* the link itself */
+  .accordion-link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  /* only the arrow toggles submenu */
+  .submenu-toggle {
+    background: none;
+    border: none;
+    padding: 0;
+    margin-bottom:6px;
+    margin-left: -5px;
+    cursor: pointer;
+    color: inherit;
+    font-size: 1em;
+  }
+  
+  /* arrow styling */
+  .arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+    font-size: 25px;
+    line-height: 1;
+    
+  }
+  
+  .accordion.open .arrow {
+    transform: rotate(-180deg);
+  }
+  
+  /* ----------------
+     SUBMENU LISTING
+     ---------------- */
+  .submenu-list {
+    list-style: none;
+    margin: 0;
+    padding-left: 15px;
+    margin-top: -5px;
+    max-height: 0;
+    overflow: hidden;
+   
+    transition: max-height 0.3s ease;
+    
+  }
+  
+  .accordion.open .submenu-list {
+    max-height: 500px; /* adjust if you add more items */
+  }
+  
+  /* compact submenu items */
+  .submenu-list li,
+  .submenu-list > a {
+    display: block;
+    margin: 0 0 0.25rem;
+    padding: 0.25rem 0;
+    font-size: 14px;
+    line-height: 0.6;
+  }
+  
+  .submenu-list a {
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  .submenu-list a:hover,
+  .submenu-list a:focus {
+    color: #e87305;
+    outline: none;
+  }
+  
+  /* =========================
+     RESPONSIVE BREAKPOINTS
+     ========================= */
+  /* Tablet */
+  @media (max-width: 1280px) {
+    .burger-menu {
+      width: 28%;
+    }
+  }
+  
+  /* Small tablets / large phones */
+  @media (max-width: 768px) {
+    .burger-menu {
+      width: 60%;
+    }
+  }
+  
+  /* Mobile */
+  @media (max-width: 480px) {
+    .burger-menu {
+      width: 65%;
+    }
+  }
+  
+  /* Ensure you have in your <head>:
+     <meta name="viewport" content="width=device-width, initial-scale=1"> */
+  
 
-/* 4) Mobile (up to 480px wide) */
-@media (max-width: 480px) {
-  .burger-menu {
-    width: 40%;         /* almost full-screen */
-  }
-}
+
+
+
+
+
+
+
+
 
 
 
