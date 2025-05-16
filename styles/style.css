@@ -308,6 +308,45 @@ body, html {
   padding: 0 20px;
   
 }
+
+ .back-to-gallery-button {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  padding:3px;
+  font-size: 16px;
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 3px;
+  margin-bottom: 3px;
+ 
+
+  
+ 
+}
+
+.service-button {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  margin-top: 10px;
+  font-size: 16px;
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+ 
+ 
+
+  
+ 
+}
+
+
  
     @media (max-width: 480px) {
     .contact-container {
@@ -437,7 +476,9 @@ header h1 {
 
 }
 
-.back-to-gallery-button {
+
+ 
+  .back-to-gallery-button {
   display: block;
   width: 100%;
   text-decoration: none;
@@ -450,8 +491,6 @@ header h1 {
   cursor: pointer;
   margin-top: 3px;
   margin-bottom: 3px;
- 
-  
  
 
   
@@ -650,8 +689,8 @@ header h1 {
 }
 
 .lightbox-content {
- height: 500px;
- width:550px;
+ height: 650px;
+ width:520px;
   
   border-radius: 6px;
   box-shadow: 0 0 20px black;
@@ -824,7 +863,7 @@ header h1 {
     position: fixed;
     top: 0; 
     right: 0;
-    /* desktop: 15% viewport, min 240px, max 300px */
+ 
     width: clamp(240px, 15%, 300px);
     height: 100vh;
     background: #000000da;
