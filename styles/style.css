@@ -976,25 +976,28 @@ header h1 {
   
   /* =========================
      RESPONSIVE BREAKPOINTS
-     ========================= */
+     ========================= 
   /* Tablet */
   @media (max-width: 1280px) {
     .burger-menu {
       width: 28%;
+      font-size: 20px;
     }
   }
   
   /* Small tablets / large phones */
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
     .burger-menu {
-      width: 60%;
+      width: 50%;
+      font-size: 20px;
     }
   }
   
   /* Mobile */
   @media (max-width: 480px) {
     .burger-menu {
-      width: 65%;
+      width: 70%;
+      font-size: 20px;
     }
   }
   
