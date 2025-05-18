@@ -641,13 +641,10 @@ header h1 {
 }
 
 .gallery .lightbox-gallery {
-  /* your existing rules… */
-  display: flex;
+   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   justify-content: center;
-
-  /* add this: */
   align-self: flex-start;  /* push the gallery to the top edge of its flex parent */
   margin-top: 1em;         /* optional extra breathing room under your button */
 }
@@ -689,8 +686,8 @@ header h1 {
 }
 
 .lightbox-content {
- height: 650px;
- width:520px;
+ height: 720px;
+ width:700px;
   
   border-radius: 6px;
   box-shadow: 0 0 20px black;
@@ -837,9 +834,7 @@ header h1 {
   }
 }
  
-/* -----------------------
-   BURGER NAV & TOGGLE
-   ----------------------- */
+
    .burger-nav {
     position: relative;
     margin-left: auto;
@@ -856,9 +851,7 @@ header h1 {
     padding: 8px;
   }
   
-  /* ---------------------------------
-     OFF-CANVAS SLIDING MENU (RIGHT)
-     --------------------------------- */
+ 
   .burger-menu {
     position: fixed;
     top: 0; 
@@ -881,9 +874,7 @@ header h1 {
     transform: translateX(0);
   }
   
-  /* ---------------------
-     OVERLAY BEHIND MENU
-     --------------------- */
+
   .menu-overlay {
     position: fixed;
     top: 0; 
@@ -905,9 +896,6 @@ header h1 {
     pointer-events: auto;
   }
   
-  /* ---------------------------------
-     BASE LINK STYLING IN BURGER MENU
-     --------------------------------- */
   .burger-menu > a,
   .accordion-link {
     display: block;
@@ -924,10 +912,7 @@ header h1 {
     color: #e87305;
     outline: none;
   }
-  
-  /* ======================
-     ACCORDION CONTAINERS
-     ====================== */
+
   .menu-item {
     margin-bottom: 1rem;
     margin-bottom: 5px;
