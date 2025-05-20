@@ -253,6 +253,29 @@ body, html {
  
   }
 
+  
+  .service-gallery-btn {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  padding:3px;
+  font-size: 16px;
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 50px;
+  margin-bottom: 3px;
+  
+ 
+
+  
+ 
+}
+
+
+
   @media (max-width: 600px) {
     .banner-overlay-services {
       font-size: 18px;
@@ -339,12 +362,16 @@ body, html {
   border: none;
   font-weight: bold;
   cursor: pointer;
+  
  
  
 
   
  
 }
+
+  
+
 
 
  
@@ -491,6 +518,7 @@ header h1 {
   cursor: pointer;
   margin-top: 3px;
   margin-bottom: 3px;
+  
  
 
   
