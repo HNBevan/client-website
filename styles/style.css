@@ -13,6 +13,90 @@ body, html {
     scroll-behavior: smooth;
 }
 
+/* Carousel */
+.infinite-carousel {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+
+.infinite-track {
+  display: flex;
+  width: max-content;
+  animation: scroll-left 150s linear infinite;
+}
+
+
+
+.slide-wrapper {
+  flex: 0 0 auto;
+  width: 350px;
+  margin: 20px;
+}
+
+.slide-wrapper img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover; /* ensures image fills space without distortion */
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%);}
+}
+
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  top: 0; left: 0;
+  width:auto;
+  height: auto;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.lightbox-content {
+  max-width: auto;
+  max-height: auto;
+  border-radius: 5px;
+}
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  color: white;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.lightbox-close { top: 30px; right: 30px; }
+.lightbox-prev { left: 30px; top: 50%; transform: translateY(-50%); }
+.lightbox-next { right: 30px; top: 50%; transform: translateY(-50%); }
+
+
+
+@media (max-width: 768px) {
+  .infinite-track {
+    animation-duration:150s;
+  }
+}
+
+
+
+
+
+
+
 
 
 /*services*/
@@ -819,6 +903,7 @@ header h1 {
   font-weight: bold;
   margin-left:-60px;
   white-space: nowrap;  
+  margin-bottom:40px;
  
 }
 
@@ -832,6 +917,7 @@ header h1 {
   font-weight: bold;
   margin-left:-60px;
   white-space: nowrap;
+ margin-bottom: 40px;
 }
 
 
@@ -1152,7 +1238,7 @@ padding: 35px;
 
 }
 
-p{line-height: 1.6; margin-bottom: 40px; text-align: center;}
+p{line-height: 1.6;text-align: center;}
 
 h2{text-align: center;}
 
@@ -1288,49 +1374,13 @@ padding: 0;
 }
 
 
-  /* Slider Track */
-  .slider {
-    display: flex;
-    height: 100%;
-    transition: transform 0.5s ease-in-out;
-  }
+ 
   
-  /* Slider Images */
-  .slider img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    flex-shrink: 0;
-    border-radius: 5px;
-  }
+
   
-  /* Navigation Arrows */
-  .slider-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.4);
-    color: #fff;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    z-index: 10;
-    font-size: 20px;
-    border-radius: 5px;
-  }
+
   
-  .slider-btn:hover {
-    background: rgba(0, 0, 0, 0.6);
-   
-  }
-  
-  .slider-btn.prev {
-    left: 10px;
-  }
-  
-  .slider-btn.next {
-    right: 10px;
-  }
+
   
  
   @media (max-width: 900px) {
@@ -1341,10 +1391,7 @@ padding: 0;
   }
   
   @media (max-width: 600px) {
-    .slider-container {
-      max-width: 100%;
-      height: 250px;
-    }
+  
   
     .slider-btn {
       padding: 8px 12px;
@@ -1358,22 +1405,7 @@ margin-top: 90px;
 
 }
 
-.slider-overlay-heading {
-  position: absolute;
-  top: 5%;
-  left: 0;
-  width: 100%;
-  background-color: #1b181770;
-  color: #fff;
-  padding: 3px 10px;
-  font-size: 16px;
-  font-weight: bold;
-  text-align: center;
-  border-radius: 5px;
-  z-index: 5;
 
-  
-}
 
 
 
