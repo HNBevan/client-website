@@ -503,6 +503,39 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const track = document.querySelector('.infinite-track');
+
+    let isDragging = false;
+    let startX;
+    let scrollLeft;
+
+    track.addEventListener('touchstart', (e) => {
+      isDragging = true;
+      startX = e.touches[0].pageX - track.offsetLeft;
+      scrollLeft = track.scrollLeft;
+      track.style.animationPlayState = 'paused';
+    });
+
+    track.addEventListener('touchmove', (e) => {
+      if (!isDragging) return;
+      const x = e.touches[0].pageX - track.offsetLeft;
+      const walk = (startX - x); // Swipe direction
+      track.scrollLeft = scrollLeft + walk;
+    });
+
+    track.addEventListener('touchend', () => {
+      isDragging = false;
+      track.style.animationPlayState = 'running';
+    });
+
+    // Optional: prevent long taps from triggering browser gestures
+    track.addEventListener('touchcancel', () => {
+      isDragging = false;
+      track.style.animationPlayState = 'running';
+    });
+  });
 </script>
 
 

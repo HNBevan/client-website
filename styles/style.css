@@ -1363,6 +1363,10 @@ padding: 0;
   right: 10px;
 }
 
+.infinite-carousel {
+  touch-action: pan-y;
+  -webkit-overflow-scrolling: touch;
+}
 
  
   
