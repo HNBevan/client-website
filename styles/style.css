@@ -25,6 +25,10 @@ body, html {
   display: flex;
   width: max-content;
   animation: scroll-left 150s linear infinite;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
 }
 
 
@@ -1361,11 +1365,6 @@ padding: 0;
 
 .lightbox-next {
   right: 10px;
-}
-
-.infinite-carousel {
-  touch-action: pan-y;
-  -webkit-overflow-scrolling: touch;
 }
 
  
