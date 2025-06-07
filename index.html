@@ -318,8 +318,38 @@
 
 
 <script>
-
 document.addEventListener('DOMContentLoaded', () => {
+  // ===== BURGER MENU =====
+  const burgerToggle = document.getElementById('burgerToggle');
+  const menu = document.getElementById('burgerMenu');
+  const overlay = document.getElementById('menuOverlay');
+
+  function toggleMenu() {
+    const isOpen = menu.classList.toggle('open');
+    overlay.classList.toggle('visible', isOpen);
+    menu.setAttribute('aria-hidden', !isOpen);
+  }
+
+  burgerToggle?.addEventListener('click', toggleMenu);
+  overlay?.addEventListener('click', toggleMenu);
+
+  document.addEventListener('keyup', e => {
+    if (e.key === 'Escape' && menu.classList.contains('open')) {
+      toggleMenu();
+    }
+  });
+
+  // ===== ACCORDIONS =====
+  const toggles = document.querySelectorAll('.submenu-toggle');
+  toggles.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.accordion');
+      const isOpen = item.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen);
+    });
+  });
+
+  // ===== CAROUSEL + LIGHTBOX SETUP =====
   const track = document.querySelector('.infinite-track');
   const images = document.querySelectorAll('.slide-wrapper img');
   const lightbox = document.getElementById('lightbox');
@@ -328,12 +358,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const prevBtn = document.querySelector('.lightbox-prev');
   const nextBtn = document.querySelector('.lightbox-next');
 
-  let currentIndex = 0;
+  let currentImageIndex = 0;
   let isPaused = false;
 
+  // Lightbox functions
   function openLightbox(index) {
-    currentIndex = index;
-    lightboxImg.src = images[currentIndex].src;
+    currentImageIndex = index;
+    lightboxImg.src = images[currentImageIndex].src;
     lightbox.style.display = 'flex';
     track.style.animationPlayState = 'paused';
     isPaused = true;
@@ -346,30 +377,32 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function showPrev() {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    lightboxImg.src = images[currentIndex].src;
+    currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+    lightboxImg.src = images[currentImageIndex].src;
   }
 
   function showNext() {
-    currentIndex = (currentIndex + 1) % images.length;
-    lightboxImg.src = images[currentIndex].src;
+    currentImageIndex = (currentImageIndex + 1) % images.length;
+    lightboxImg.src = images[currentImageIndex].src;
   }
 
+  // Click to open lightbox
   images.forEach((img, index) => {
-    img.addEventListener('click', () => {
+    img.addEventListener('click', (e) => {
+      e.stopPropagation(); // stop from toggling animation
       openLightbox(index);
     });
   });
 
-  closeBtn.addEventListener('click', closeLightbox);
-  lightbox.addEventListener('click', (e) => {
+  closeBtn?.addEventListener('click', closeLightbox);
+  lightbox?.addEventListener('click', (e) => {
     if (e.target === lightbox) closeLightbox();
   });
-  prevBtn.addEventListener('click', (e) => {
+  prevBtn?.addEventListener('click', (e) => {
     e.stopPropagation();
     showPrev();
   });
-  nextBtn.addEventListener('click', (e) => {
+  nextBtn?.addEventListener('click', (e) => {
     e.stopPropagation();
     showNext();
   });
@@ -381,161 +414,54 @@ document.addEventListener('DOMContentLoaded', () => {
       if (e.key === 'ArrowRight') showNext();
     }
   });
-});
 
-
-
-  let isPaused = false;
-  let currentImageIndex = 0;
-
-  document.addEventListener('DOMContentLoaded', () => {
-    // ===== BURGER MENU =====
-    const burgerToggle = document.getElementById('burgerToggle');
-    const menu = document.getElementById('burgerMenu');
-    const overlay = document.getElementById('menuOverlay');
-
-    function toggleMenu() {
-      const isOpen = menu.classList.toggle('open');
-      overlay.classList.toggle('visible', isOpen);
-      menu.setAttribute('aria-hidden', !isOpen);
+  // ===== PAUSE/RESUME on Click Outside Images =====
+  track.addEventListener('click', (e) => {
+    if (e.target.tagName !== 'IMG') {
+      isPaused = !isPaused;
+      track.style.animationPlayState = isPaused ? 'paused' : 'running';
     }
+  });
 
-    burgerToggle.addEventListener('click', toggleMenu);
-    overlay.addEventListener('click', toggleMenu);
+  // ===== SWIPE SUPPORT (Touch and Mouse Drag) =====
+  let isDragging = false;
+  let startX = 0;
+  let scrollLeft = 0;
 
-    document.addEventListener('keyup', e => {
-      if (e.key === 'Escape' && menu.classList.contains('open')) {
-        toggleMenu();
-      }
-    });
-
-    // ===== ACCORDIONS =====
-    const toggles = document.querySelectorAll('.submenu-toggle');
-    toggles.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const item = btn.closest('.accordion');
-        const isOpen = item.classList.toggle('open');
-        btn.setAttribute('aria-expanded', isOpen);
-      });
-    });
-
-   
-  document.addEventListener('DOMContentLoaded', () => {
-  const track = document.querySelector('.infinite-track');
-  const images = document.querySelectorAll('.slide-wrapper img');
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightbox-img');
-  const closeBtn = document.querySelector('.lightbox-close');
-  const prevBtn = document.querySelector('.lightbox-prev');
-  const nextBtn = document.querySelector('.lightbox-next');
-
-  let currentImageIndex = 0;
-  let isPaused = false;
-
-  // Open Lightbox
-  function openLightbox(index) {
-    currentImageIndex = index;
-    lightboxImg.src = images[currentImageIndex].src;
-    lightbox.style.display = 'flex';
+  const startDrag = (x) => {
+    isDragging = true;
+    startX = x;
+    scrollLeft = track.scrollLeft;
     track.style.animationPlayState = 'paused';
-    isPaused = true;
-  }
+  };
 
-  // Close Lightbox
-  function closeLightbox() {
-    lightbox.style.display = 'none';
-    track.style.animationPlayState = 'running';
-    isPaused = false;
-  }
+  const moveDrag = (x) => {
+    if (!isDragging) return;
+    const walk = startX - x;
+    track.scrollLeft = scrollLeft + walk;
+  };
 
-  // Navigate
-  function showPrev() {
-    currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-    lightboxImg.src = images[currentImageIndex].src;
-  }
+  const stopDrag = () => {
+    isDragging = false;
+    if (!isPaused) track.style.animationPlayState = 'running';
+  };
 
-  function showNext() {
-    currentImageIndex = (currentImageIndex + 1) % images.length;
-    lightboxImg.src = images[currentImageIndex].src;
-  }
+  // Touch
+  track.addEventListener('touchstart', (e) => startDrag(e.touches[0].pageX));
+  track.addEventListener('touchmove', (e) => moveDrag(e.touches[0].pageX));
+  track.addEventListener('touchend', stopDrag);
+  track.addEventListener('touchcancel', stopDrag);
 
-  // Add click listener to images
-  images.forEach((img, index) => {
-    img.addEventListener('click', () => {
-      openLightbox(index);
-    });
-  });
-
-  // Close on close button
-  closeBtn.addEventListener('click', closeLightbox);
-
-  // Close on background click
-  lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) closeLightbox();
-  });
-
-  // Arrow buttons
-  prevBtn.addEventListener('click', showPrev);
-  nextBtn.addEventListener('click', showNext);
-
-  // Keyboard controls
-  document.addEventListener('keydown', (e) => {
-    if (lightbox.style.display === 'flex') {
-      if (e.key === 'Escape') {
-        closeLightbox();
-      } else if (e.key === 'ArrowLeft') {
-        showPrev();
-      } else if (e.key === 'ArrowRight') {
-        showNext();
-      }
+  // Mouse (optional)
+  track.addEventListener('mousedown', (e) => startDrag(e.pageX));
+  track.addEventListener('mousemove', (e) => {
+    if (isDragging) {
+      e.preventDefault();
+      moveDrag(e.pageX);
     }
   });
+  document.addEventListener('mouseup', stopDrag);
 });
-
-
-    // ===== CAROUSEL CLICK TO PAUSE =====
-    const track = document.querySelector('.infinite-track');
-    track.addEventListener('click', (e) => {
-      // Prevent toggling if clicking on an image
-      if (e.target.tagName !== 'IMG') {
-        isPaused = !isPaused;
-        track.style.animationPlayState = isPaused ? 'paused' : 'running';
-      }
-    });
-  });
-
-  document.addEventListener('DOMContentLoaded', () => {
-    const track = document.querySelector('.infinite-track');
-
-    let isDragging = false;
-    let startX;
-    let scrollLeft;
-
-    track.addEventListener('touchstart', (e) => {
-      isDragging = true;
-      startX = e.touches[0].pageX - track.offsetLeft;
-      scrollLeft = track.scrollLeft;
-      track.style.animationPlayState = 'paused';
-    });
-
-    track.addEventListener('touchmove', (e) => {
-      if (!isDragging) return;
-      const x = e.touches[0].pageX - track.offsetLeft;
-      const walk = (startX - x); // Swipe direction
-      track.scrollLeft = scrollLeft + walk;
-    });
-
-    track.addEventListener('touchend', () => {
-      isDragging = false;
-      track.style.animationPlayState = 'running';
-    });
-
-    // Optional: prevent long taps from triggering browser gestures
-    track.addEventListener('touchcancel', () => {
-      isDragging = false;
-      track.style.animationPlayState = 'running';
-    });
-  });
 </script>
 
 
