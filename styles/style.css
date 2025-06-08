@@ -67,7 +67,7 @@ height: 500px; }
 .infinite-track {
   display: flex;
   width: max-content;
-  animation: scroll-left 150s linear infinite;
+  animation: scroll-left 250s linear infinite;
 }
 
 
@@ -130,7 +130,7 @@ height: 500px; }
 
 @media (max-width: 768px) {
   .infinite-track {
-    animation-duration:150s;
+    animation-duration:250s;
   }
 }
 
@@ -1303,6 +1303,11 @@ h2{text-align: center;}
  
 }
 
+.recent-projects-subheader {
+  text-align: center;
+  
+  
+}
 
 .services-header {
 margin-top: 90px;
