@@ -42,7 +42,7 @@
   <h1 class="visually-hidden">Private Swimming Pool installation in Kent</h1>
 
 
-  <div class="page-wrapper">
+ <div clas s="page-wrapper">
 
      <header>
       <div class="header">
@@ -89,7 +89,7 @@
               <div class="accordion-header">
              
                 <a href="services.html" class="accordion-link">Services</a>
-               >
+               
                 <button class="submenu-toggle" aria-expanded="false">
                   <span class="arrow">▾</span>
                 </button>
@@ -116,15 +116,31 @@
     </header>
     
 
-    
+    <div class="banner-slider">
+      <div class="banner-slide active" style="background-image: url('images/Banner\ two.jpg');"></div>
+       
+       <div class="banner-slide" style="background-image: url('images/roof-hero-banner.png');"></div>
+      <div class="banner-slide" style="background-image: url('images/kitchen-hero-banner.png');"></div>
+     
+      <div class="banner-slide" style="background-image: url('images/bathroom-hero-banner.png');"></div>
+      <div class="banner-slide" style="background-image: url('images/brickwork-hero-banner.png');"></div>
+      <div class="banner-slide" style="background-image: url('images/blockpaving-hero-image.png');"></div>
+      <div class="banner-slide" style="background-image: url('images/landscaping-herp-banner.png');"></div>
+      <div class="banner-slide" style="background-image: url('images/decorating-hero-banner.png');"></div>
+      <div class="banner-slide" style="background-image: url('images/extension-hero-banner.png');"></div> 
+       
+      
+     
+
+  <div class="banner-overlay">
+    <img src="images/aptlogo.png" alt="Logo" class="banner-logo" />
+    <a href="contact.html" class="button">Get in Touch</a>
+  </div>
+</div>
+
     
 
-    <div class="banner">
-      <div class="banner-overlay">
-        <img src="images/aptlogo.png" alt="Logo" class="banner-logo" />
-        <a href="contact.html" class="button">Get in Touch</a>
-      </div>
-    </div>
+    
 
     <div class="container">
         <h2 class="about-us-header">About Us</h2>
@@ -149,7 +165,6 @@
     <div class="infinite-carousel"id="carouselTrack">
     <h4 class="recent-projects-subheader">Private Swimming Pool installation</h4>
     <div class="infinite-track">
-   
     <div class="slide-wrapper"><img src="images/spbeg.jpg" alt="Start of swimming pool dig in Sellindge, Kent." class="lightbox-img" loading="lazy"></div>
     <div class="slide-wrapper"><img src="images/spbeg2.jpg" alt="Preparation dig out for swimming pool area." class="lightbox-img" loading="lazy"></div>
     <div class="slide-wrapper"><img src="images/spbeg3.jpg" alt="Extended dig area for swimming pool." class="lightbox-img" loading="lazy"></div>
@@ -360,6 +375,24 @@
 
 
 <script>
+
+  const slides = document.querySelectorAll('.banner-slide');
+  let currentSlide = 0;
+
+  function showNextSlide() {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add('active');
+  }
+
+  setInterval(showNextSlide, 3000); // change every 5 seconds
+
+
+
+
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
   // ===== BURGER MENU =====
   const burgerToggle = document.getElementById('burgerToggle');
