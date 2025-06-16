@@ -407,6 +407,12 @@ height: 500px; }
  
 }
 
+  
+ 
+
+  
+ 
+
 
 
   @media (max-width: 600px) {
@@ -564,6 +570,8 @@ height: 500px; }
     margin-top: 8px;
     transition: 0.1s;
 }
+
+
 
 .contact-container button:hover {
     opacity: 0.8;
