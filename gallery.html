@@ -247,7 +247,31 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
       </script>
-      
+ 
+ <!-- Cookie Banner -->
+<div id="cookie-banner" class="cookie-banner">
+  <p>
+    We use cookies to enhance your experience. 
+    <a href="/privacy-policy.html">Learn more</a>
+  </p>
+  <div class="cookie-buttons">
+    <button class="accept" onclick="handleCookieChoice(true)">Accept</button>
+    <button class="decline" onclick="handleCookieChoice(false)">Decline</button>
+  </div>
+</div>
+
+<script>
+  function acceptCookies() {
+    localStorage.setItem('cookiesAccepted', 'true');
+    document.getElementById('cookie-banner').style.display = 'none';
+  }
+
+  window.onload = function () {
+    if (localStorage.getItem('cookiesAccepted')) {
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+  };
+</script>
 
 </body>
 </html>
